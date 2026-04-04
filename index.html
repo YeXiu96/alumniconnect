@@ -21,19 +21,13 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);min-height:100vh;overflow-x:hidden}
-
-/* DEBUG BANNER */
 #debug-banner{display:none;position:fixed;top:0;left:0;right:0;z-index:99999;background:#E74C3C;color:#fff;padding:12px 20px;font-size:.85rem;font-family:monospace;line-height:1.5}
 #debug-banner.show{display:block}
 #debug-banner button{background:rgba(255,255,255,.25);border:none;color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;margin-left:12px;font-size:.8rem}
-
-/* PAGE SYSTEM */
 .page{display:none;min-height:100vh;flex-direction:column}
 .page.active{display:flex}
 #page-app.active{flex-direction:row}
 #page-register.active,#page-login.active{flex-direction:row}
-
-/* BUTTONS */
 button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;transition:var(--transition)}
 .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);padding:12px 28px;border-radius:50px;font-weight:600;font-size:.9rem;letter-spacing:.3px;box-shadow:0 4px 16px rgba(201,168,76,.35)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.5)}
@@ -43,21 +37,16 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .btn-ghost{background:transparent;border:1.5px solid var(--gold);color:var(--gold);padding:12px 28px;border-radius:50px;font-weight:500;font-size:.9rem}
 .btn-ghost:hover{background:var(--gold-dim)}
 .btn-ghost.large{padding:15px 36px;font-size:1rem}
-
-/* ALERTS */
 .alert-error{background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.3);color:var(--danger);padding:10px 14px;border-radius:var(--radius-sm);font-size:.85rem;margin-bottom:16px}
 .alert-success{background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.3);color:#1a7a45;padding:10px 14px;border-radius:var(--radius-sm);font-size:.85rem;margin-bottom:16px}
 .hidden{display:none!important}
 .mt-md{margin-top:16px}
 .mt-lg{margin-top:32px}
-
-/* FORMS */
 .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
 .form-group label{font-size:.78rem;font-weight:600;color:var(--text-mid);text-transform:uppercase;letter-spacing:.8px}
 .form-group input,.form-group select,.form-group textarea{padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--white);font-family:'DM Sans',sans-serif;font-size:.95rem;color:var(--text-dark);transition:var(--transition);width:100%}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim);outline:none}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
 /* LANDING */
 #page-landing{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
 .landing-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
@@ -83,7 +72,6 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .stat span{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--white)}
 .stat small{color:rgba(255,255,255,.5);font-size:.8rem;margin-top:2px}
 .stat-div{width:1px;height:40px;background:rgba(255,255,255,.15)}
-
 /* AUTH */
 .auth-layout{display:flex;width:100%;min-height:100vh}
 .auth-left{width:45%;background:var(--navy);display:flex;flex-direction:column;padding:32px 48px;position:relative;overflow:hidden}
@@ -102,7 +90,6 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .auth-sub{color:var(--text-light);font-size:.9rem;margin-bottom:28px}
 .auth-switch{text-align:center;margin-top:20px;color:var(--text-light);font-size:.875rem}
 .auth-switch a{color:var(--gold);font-weight:600;text-decoration:none}
-
 /* APP LAYOUT */
 .sidebar{width:240px;min-height:100vh;background:var(--navy);display:flex;flex-direction:column;padding:28px 16px;flex-shrink:0;transition:var(--transition);z-index:100}
 .sidebar-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);padding:8px 12px;margin-bottom:32px}
@@ -129,16 +116,12 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .db-indicator{display:flex;align-items:center;gap:6px;background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.25);color:#1a7a45;padding:5px 12px;border-radius:50px;font-size:.75rem;font-weight:600}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:4px}
 .hamburger span{display:block;width:20px;height:2px;background:var(--navy);border-radius:2px}
-
-/* TABS */
 .tab-content{display:none;flex:1;padding:32px;overflow-y:auto}
 .tab-content.active{display:block}
 .section-header{margin-bottom:24px}
 .section-header h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);margin-bottom:4px}
 .section-header h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:4px}
 .section-header p{color:var(--text-light);font-size:.9rem}
-
-/* STATS */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .stat-card{background:var(--white);border-radius:var(--radius);padding:24px;display:flex;align-items:center;gap:16px;border:1.5px solid var(--cream-dark);transition:var(--transition)}
 .stat-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
@@ -150,12 +133,8 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1}
 .stat-num.small-text{font-size:1rem;font-family:'DM Sans',sans-serif}
 .stat-card small{color:var(--text-light);font-size:.78rem;margin-top:4px}
-
-/* SKELETON */
 .skeleton-card{height:140px;border-radius:var(--radius);background:linear-gradient(90deg,var(--cream-dark) 25%,var(--cream) 50%,var(--cream-dark) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
-/* ALUMNI GRID */
 .alumni-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
 .alumni-card{background:var(--white);border-radius:var(--radius);padding:20px;border:1.5px solid var(--cream-dark);transition:var(--transition)}
 .alumni-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--border)}
@@ -164,24 +143,37 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .alumni-card .alumni-job{font-size:.8rem;color:var(--text-light);margin-bottom:8px;line-height:1.4}
 .badge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:600;background:var(--gold-dim);color:#8B6914;border:1px solid rgba(201,168,76,.25);margin-right:4px;margin-top:4px}
 .badge.secondary{background:rgba(11,20,55,.07);color:var(--navy);border-color:rgba(11,20,55,.1)}
-
+.badge.pns{background:rgba(46,204,113,.1);color:#1a7a45;border-color:rgba(46,204,113,.3)}
+.badge.swasta{background:rgba(52,152,219,.1);color:#1a5276;border-color:rgba(52,152,219,.3)}
+.badge.wirausaha{background:rgba(231,76,60,.1);color:#922b21;border-color:rgba(231,76,60,.3)}
 /* PROFILE */
-.profile-layout{display:grid;grid-template-columns:280px 1fr;gap:24px;align-items:start}
+.profile-layout{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
 .profile-card-main{background:var(--navy);border-radius:var(--radius);padding:32px 24px;text-align:center;color:var(--white)}
 .profile-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;color:var(--navy);font-family:'Playfair Display',serif;margin:0 auto 16px;border:3px solid rgba(201,168,76,.3)}
 .profile-card-main h2{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:8px}
 .profile-tagline{color:rgba(255,255,255,.6);font-size:.85rem;margin-bottom:16px}
-.profile-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.profile-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px}
+.sosmed-links{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.sosmed-link{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);font-size:.82rem;text-decoration:none;transition:var(--transition)}
+.sosmed-link:hover{background:rgba(255,255,255,.15);color:var(--white)}
+.sosmed-link .sm-icon{font-size:1rem;width:20px;text-align:center}
+.profile-tabs{display:flex;gap:8px;margin-bottom:20px;border-bottom:1px solid var(--cream-dark);padding-bottom:0}
+.profile-tab{background:none;padding:10px 16px;border-radius:var(--radius-sm) var(--radius-sm) 0 0;font-size:.85rem;font-weight:600;color:var(--text-light);border-bottom:2px solid transparent;margin-bottom:-1px}
+.profile-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
 .profile-details-card{background:var(--white);border-radius:var(--radius);padding:28px;border:1.5px solid var(--cream-dark)}
-.profile-details-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--cream-dark)}
-.detail-row{display:flex;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--cream-dark);gap:16px}
+.profile-section{display:none}
+.profile-section.active{display:block}
+.profile-section-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--cream-dark)}
+.detail-row{display:flex;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--cream-dark);gap:16px}
 .detail-row:last-of-type{border-bottom:none}
-.detail-row label{font-size:.78rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:.6px;min-width:130px}
-.detail-row span{font-size:.95rem;color:var(--text-dark);font-weight:500}
-
+.detail-row label{font-size:.78rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:.6px;min-width:140px;flex-shrink:0}
+.detail-row span{font-size:.9rem;color:var(--text-dark);font-weight:500}
+.detail-row a{font-size:.9rem;color:var(--gold);font-weight:500;text-decoration:none}
+.detail-row a:hover{text-decoration:underline}
+.detail-empty{color:var(--text-light);font-style:italic;font-size:.85rem}
 /* SEARCH */
-.search-bar-wrap{display:flex;gap:12px;margin-bottom:24px}
-.search-bar{flex:1;display:flex;align-items:center;gap:10px;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);padding:0 16px;transition:var(--transition)}
+.search-bar-wrap{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.search-bar{flex:1;min-width:200px;display:flex;align-items:center;gap:10px;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);padding:0 16px;transition:var(--transition)}
 .search-bar:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim)}
 .search-bar svg{width:18px;height:18px;fill:none;stroke:var(--text-light);stroke-width:2;stroke-linecap:round;flex-shrink:0}
 .search-bar input{flex:1;border:none;background:none;font-size:.95rem;color:var(--text-dark);font-family:'DM Sans',sans-serif;padding:13px 0}
@@ -189,7 +181,6 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .search-bar-wrap select{padding:12px 16px;border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);background:var(--white);font-family:'DM Sans',sans-serif;font-size:.9rem;color:var(--text-dark);min-width:160px}
 .empty-state{text-align:center;padding:60px 24px;color:var(--text-light)}
 .empty-icon{font-size:3rem;margin-bottom:12px}
-
 /* CAREER */
 .career-layout{display:grid;grid-template-columns:280px 1fr;gap:24px;align-items:start}
 .career-summary-card{background:var(--navy);border-radius:var(--radius);padding:28px;color:var(--white);position:sticky;top:96px}
@@ -210,21 +201,24 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .ti-company{font-size:.85rem;color:var(--text-light);margin-bottom:6px}
 .ti-desc{font-size:.85rem;color:var(--text-mid);line-height:1.6}
 .ti-badge{margin-top:6px}
-
 /* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(11,20,55,.6);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:1000;padding:24px}
-.modal-card{background:var(--white);border-radius:var(--radius);padding:32px;width:100%;max-width:460px;box-shadow:var(--shadow-lg);animation:modalIn .2s ease}
+.modal-overlay{position:fixed;inset:0;background:rgba(11,20,55,.6);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:1000;padding:24px;overflow-y:auto}
+.modal-card{background:var(--white);border-radius:var(--radius);padding:32px;width:100%;max-width:520px;box-shadow:var(--shadow-lg);animation:modalIn .2s ease;margin:auto}
 @keyframes modalIn{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
-.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--cream-dark)}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--cream-dark)}
 .modal-header h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy)}
 .modal-close{width:32px;height:32px;border-radius:50%;background:var(--cream);color:var(--text-mid);font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+.modal-section-label{font-size:.75rem;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin:16px 0 10px;padding-top:12px;border-top:1px solid var(--cream-dark)}
 .modal-footer{display:flex;justify-content:flex-end;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid var(--cream-dark)}
-
-/* TOAST */
 .toast{position:fixed;bottom:32px;right:32px;background:var(--navy);color:var(--white);padding:14px 22px;border-radius:var(--radius-sm);font-size:.9rem;font-weight:500;z-index:9999;border-left:4px solid var(--gold);box-shadow:var(--shadow-lg);animation:slideIn .3s ease}
 @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
-
-/* RESPONSIVE */
+/* KELENGKAPAN PROFIL */
+.profile-complete{background:var(--white);border-radius:var(--radius);padding:20px 24px;border:1.5px solid var(--cream-dark);margin-bottom:20px;display:flex;align-items:center;gap:16px}
+.complete-bar-wrap{flex:1}
+.complete-label{font-size:.82rem;color:var(--text-light);margin-bottom:6px}
+.complete-bar{height:8px;background:var(--cream-dark);border-radius:50px;overflow:hidden}
+.complete-fill{height:100%;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:50px;transition:width .6s ease}
+.complete-pct{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy);min-width:48px;text-align:right}
 @media(max-width:900px){
   .landing-nav{padding:20px 24px}
   .landing-hero{padding:20px 24px 60px}
@@ -249,18 +243,11 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 </head>
 <body>
 
-<!-- DEBUG BANNER -->
-<div id="debug-banner">
-  <span id="debug-msg"></span>
-  <button onclick="document.getElementById('debug-banner').classList.remove('show')">Tutup</button>
-</div>
+<div id="debug-banner"><span id="debug-msg"></span><button onclick="document.getElementById('debug-banner').classList.remove('show')">Tutup</button></div>
 
 <!-- LANDING -->
 <div id="page-landing" class="page">
-  <div class="landing-bg">
-    <div class="bg-blob b1"></div><div class="bg-blob b2"></div><div class="bg-blob b3"></div>
-    <div class="grid-lines"></div>
-  </div>
+  <div class="landing-bg"><div class="bg-blob b1"></div><div class="bg-blob b2"></div><div class="bg-blob b3"></div><div class="grid-lines"></div></div>
   <nav class="landing-nav">
     <div class="logo">Alumni<span>Connect</span></div>
     <div class="nav-actions">
@@ -291,8 +278,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
   <div class="auth-layout">
     <div class="auth-left">
       <div class="auth-brand" onclick="showPage('page-landing')"><span class="logo">Alumni<span>Connect</span></span></div>
-      <div class="auth-art">
-        <div class="art-circle c1"></div><div class="art-circle c2"></div><div class="art-circle c3"></div>
+      <div class="auth-art"><div class="art-circle c1"></div><div class="art-circle c2"></div><div class="art-circle c3"></div>
         <div class="art-text"><h2>Bergabunglah<br/>dengan jaringan<br/>alumni kami.</h2><p>Daftarkan diri dan mulai perjalanan profesional Anda.</p></div>
       </div>
     </div>
@@ -329,8 +315,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
   <div class="auth-layout">
     <div class="auth-left">
       <div class="auth-brand" onclick="showPage('page-landing')"><span class="logo">Alumni<span>Connect</span></span></div>
-      <div class="auth-art">
-        <div class="art-circle c1"></div><div class="art-circle c2"></div><div class="art-circle c3"></div>
+      <div class="auth-art"><div class="art-circle c1"></div><div class="art-circle c2"></div><div class="art-circle c3"></div>
         <div class="auth-text"><h2>Selamat<br/>datang<br/>kembali.</h2><p>Masuk dan lanjutkan perjalanan profesional Anda.</p></div>
       </div>
     </div>
@@ -404,7 +389,17 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 
     <!-- PROFIL -->
     <div id="tab-profil" class="tab-content">
-      <div class="section-header"><h1>Profil Saya</h1><p>Informasi akun dan data diri Anda</p></div>
+      <div class="section-header"><h1>Profil Saya</h1><p>Lengkapi data diri Anda secara sukarela</p></div>
+
+      <!-- Progress kelengkapan -->
+      <div class="profile-complete">
+        <div class="complete-bar-wrap">
+          <div class="complete-label">Kelengkapan Profil</div>
+          <div class="complete-bar"><div class="complete-fill" id="complete-fill" style="width:0%"></div></div>
+        </div>
+        <div class="complete-pct" id="complete-pct">0%</div>
+      </div>
+
       <div class="profile-layout">
         <div class="profile-card-main">
           <div class="profile-avatar" id="profile-avatar-circle"></div>
@@ -413,16 +408,48 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
           <div class="profile-badges">
             <span id="profile-badge-prodi" class="badge"></span>
             <span id="profile-badge-tahun" class="badge secondary"></span>
+            <span id="profile-badge-status" class="badge"></span>
           </div>
+          <div class="sosmed-links" id="profile-sosmed-links"></div>
         </div>
+
         <div class="profile-details-card">
-          <h3>Detail Informasi</h3>
-          <div class="detail-row"><label>Nama Lengkap</label><span id="pd-name"></span></div>
-          <div class="detail-row"><label>Email</label><span id="pd-email"></span></div>
-          <div class="detail-row"><label>Program Studi</label><span id="pd-prodi"></span></div>
-          <div class="detail-row"><label>Tahun Lulus</label><span id="pd-tahun"></span></div>
-          <div class="detail-row"><label>Pekerjaan</label><span id="pd-job"></span></div>
-          <button class="btn-primary mt-md" onclick="openEditModal()">Edit Profil</button>
+          <div class="profile-tabs">
+            <button class="profile-tab active" onclick="switchProfileTab(this,'psec-data')">Data Diri</button>
+            <button class="profile-tab" onclick="switchProfileTab(this,'psec-kerja')">Info Kerja</button>
+            <button class="profile-tab" onclick="switchProfileTab(this,'psec-sosmed')">Media Sosial</button>
+          </div>
+
+          <!-- Tab Data Diri -->
+          <div class="profile-section active" id="psec-data">
+            <div class="profile-section-title">Informasi Pribadi</div>
+            <div class="detail-row"><label>Nama Lengkap</label><span id="pd-name"></span></div>
+            <div class="detail-row"><label>Email</label><span id="pd-email"></span></div>
+            <div class="detail-row"><label>No. HP</label><span id="pd-hp"></span></div>
+            <div class="detail-row"><label>Program Studi</label><span id="pd-prodi"></span></div>
+            <div class="detail-row"><label>Tahun Lulus</label><span id="pd-tahun"></span></div>
+          </div>
+
+          <!-- Tab Info Kerja -->
+          <div class="profile-section" id="psec-kerja">
+            <div class="profile-section-title">Informasi Pekerjaan</div>
+            <div class="detail-row"><label>Status</label><span id="pd-status"></span></div>
+            <div class="detail-row"><label>Posisi / Jabatan</label><span id="pd-posisi"></span></div>
+            <div class="detail-row"><label>Tempat Bekerja</label><span id="pd-pekerjaan"></span></div>
+            <div class="detail-row"><label>Alamat Kantor</label><span id="pd-alamat-kantor"></span></div>
+            <div class="detail-row"><label>Sosmed Kantor</label><span id="pd-sosmed-kantor"></span></div>
+          </div>
+
+          <!-- Tab Media Sosial -->
+          <div class="profile-section" id="psec-sosmed">
+            <div class="profile-section-title">Akun Media Sosial Pribadi</div>
+            <div class="detail-row"><label>LinkedIn</label><span id="pd-linkedin"></span></div>
+            <div class="detail-row"><label>Instagram</label><span id="pd-instagram"></span></div>
+            <div class="detail-row"><label>Facebook</label><span id="pd-facebook"></span></div>
+            <div class="detail-row"><label>TikTok</label><span id="pd-tiktok"></span></div>
+          </div>
+
+          <button class="btn-primary mt-md" onclick="openEditModal()">✏️ Edit Profil Lengkap</button>
         </div>
       </div>
     </div>
@@ -433,13 +460,19 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
       <div class="search-bar-wrap">
         <div class="search-bar">
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" id="search-input" placeholder="Cari berdasarkan nama..." oninput="doSearch()"/>
+          <input type="text" id="search-input" placeholder="Cari nama alumni..." oninput="doSearch()"/>
         </div>
         <select id="search-prodi" onchange="doSearch()">
           <option value="">Semua Prodi</option>
           <option>Teknik Informatika</option><option>Sistem Informasi</option><option>Manajemen</option>
           <option>Akuntansi</option><option>Hukum</option><option>Kedokteran</option>
           <option>Psikologi</option><option>Ilmu Komunikasi</option><option>Teknik Elektro</option><option>Teknik Sipil</option>
+        </select>
+        <select id="search-status" onchange="doSearch()">
+          <option value="">Semua Status</option>
+          <option value="PNS">PNS</option>
+          <option value="Swasta">Swasta</option>
+          <option value="Wirausaha">Wirausaha</option>
         </select>
       </div>
       <div id="search-results" class="alumni-grid"></div>
@@ -465,23 +498,50 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
   </main>
 </div>
 
-<!-- MODAL EDIT PROFIL -->
+<!-- MODAL EDIT PROFIL LENGKAP -->
 <div id="modal-edit" class="modal-overlay hidden" onclick="closeModal('modal-edit')">
   <div class="modal-card" onclick="event.stopPropagation()">
-    <div class="modal-header"><h3>Edit Profil</h3><button class="modal-close" onclick="closeModal('modal-edit')">×</button></div>
+    <div class="modal-header"><h3>Edit Profil Lengkap</h3><button class="modal-close" onclick="closeModal('modal-edit')">×</button></div>
+
+    <div class="modal-section-label">📋 Data Pribadi</div>
     <div class="form-group"><label>Nama Lengkap</label><input id="edit-name" type="text"/></div>
-    <div class="form-group"><label>Pekerjaan Saat Ini</label><input id="edit-job" type="text"/></div>
-    <div class="form-group"><label>Program Studi</label>
-      <select id="edit-prodi">
-        <option>Teknik Informatika</option><option>Sistem Informasi</option><option>Manajemen</option>
-        <option>Akuntansi</option><option>Hukum</option><option>Kedokteran</option>
-        <option>Psikologi</option><option>Ilmu Komunikasi</option><option>Teknik Elektro</option><option>Teknik Sipil</option>
+    <div class="form-row">
+      <div class="form-group"><label>Program Studi</label>
+        <select id="edit-prodi">
+          <option>Teknik Informatika</option><option>Sistem Informasi</option><option>Manajemen</option>
+          <option>Akuntansi</option><option>Hukum</option><option>Kedokteran</option>
+          <option>Psikologi</option><option>Ilmu Komunikasi</option><option>Teknik Elektro</option><option>Teknik Sipil</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Tahun Lulus</label><input id="edit-tahun" type="number"/></div>
+    </div>
+    <div class="form-group"><label>No. HP / WhatsApp</label><input id="edit-hp" type="text" placeholder="08xxxxxxxxxx"/></div>
+
+    <div class="modal-section-label">💼 Informasi Pekerjaan</div>
+    <div class="form-group"><label>Status Pekerjaan</label>
+      <select id="edit-status">
+        <option value="">— Pilih Status —</option>
+        <option value="PNS">PNS</option>
+        <option value="Swasta">Swasta</option>
+        <option value="Wirausaha">Wirausaha</option>
       </select>
     </div>
-    <div class="form-group"><label>Tahun Lulus</label><input id="edit-tahun" type="number"/></div>
+    <div class="form-group"><label>Posisi / Jabatan</label><input id="edit-posisi" type="text" placeholder="Contoh: Software Engineer"/></div>
+    <div class="form-group"><label>Tempat Bekerja</label><input id="edit-job" type="text" placeholder="Contoh: PT. Gojek Indonesia"/></div>
+    <div class="form-group"><label>Alamat Kantor</label><input id="edit-alamat-kantor" type="text" placeholder="Contoh: Jl. Kemang Raya No.1, Jakarta"/></div>
+    <div class="form-group"><label>Sosial Media Kantor / Perusahaan</label><input id="edit-sosmed-kantor" type="text" placeholder="Contoh: @gojekid (IG) atau url LinkedIn"/></div>
+
+    <div class="modal-section-label">📱 Media Sosial Pribadi</div>
+    <div class="form-group"><label>LinkedIn</label><input id="edit-linkedin" type="text" placeholder="linkedin.com/in/username"/></div>
+    <div class="form-row">
+      <div class="form-group"><label>Instagram</label><input id="edit-instagram" type="text" placeholder="@username"/></div>
+      <div class="form-group"><label>TikTok</label><input id="edit-tiktok" type="text" placeholder="@username"/></div>
+    </div>
+    <div class="form-group"><label>Facebook</label><input id="edit-facebook" type="text" placeholder="facebook.com/username"/></div>
+
     <div class="modal-footer">
       <button class="btn-ghost" onclick="closeModal('modal-edit')">Batal</button>
-      <button class="btn-primary" id="btn-save-edit" onclick="saveEdit()">Simpan</button>
+      <button class="btn-primary" id="btn-save-edit" onclick="saveEdit()">Simpan Semua</button>
     </div>
   </div>
 </div>
@@ -510,471 +570,379 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 
 <div id="toast" class="toast hidden"></div>
 
-<!-- Supabase: coba CDN utama dulu, fallback ke unpkg -->
 <script>
-(function() {
-  function loadScript(src, onSuccess, onFail) {
-    var s = document.createElement('script');
-    s.src = src;
-    s.onload = onSuccess;
-    s.onerror = onFail;
-    document.head.appendChild(s);
-  }
-
-  var PRIMARY   = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
-  var FALLBACK  = 'https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js';
-
-  loadScript(PRIMARY, function() {
-    console.log('Supabase loaded via jsdelivr');
-    window.__supabaseReady = true;
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
-  }, function() {
-    console.warn('jsdelivr gagal, coba unpkg...');
-    loadScript(FALLBACK, function() {
-      console.log('Supabase loaded via unpkg');
-      window.__supabaseReady = true;
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
-    }, function() {
-      // Kedua CDN gagal — tetap tampilkan UI tapi kasih tahu user
-      console.error('Kedua CDN Supabase gagal!');
-      window.__supabaseReady = false;
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-          showDebug('⚠️ Library Supabase gagal dimuat. Periksa koneksi internet Anda, lalu refresh halaman.');
-          showPage('page-landing');
-        });
-      } else {
-        showDebug('⚠️ Library Supabase gagal dimuat. Periksa koneksi internet Anda, lalu refresh halaman.');
-        showPage('page-landing');
-      }
+(function(){
+  function loadScript(src,onSuccess,onFail){var s=document.createElement('script');s.src=src;s.onload=onSuccess;s.onerror=onFail;document.head.appendChild(s);}
+  var PRI='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+  var FAL='https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js';
+  function ready(fn){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fn);}else{fn();}}
+  loadScript(PRI,function(){ready(init);},function(){
+    loadScript(FAL,function(){ready(init);},function(){
+      ready(function(){showDebug('⚠️ Library Supabase gagal dimuat. Periksa koneksi internet lalu refresh.');showPage('page-landing');});
     });
   });
 })();
 </script>
-
 <script>
-// ════════════════════════════════════════════════
-//  KREDENSIAL SUPABASE
-// ════════════════════════════════════════════════
 var SUPABASE_URL = 'https://rlposusbsyzuizgzbazo.supabase.co';
 var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJscG9zdXNic3l6dWl6Z3piYXpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMDIwMjUsImV4cCI6MjA5MDg3ODAyNX0.L_P63fysvuO-CfH97svIOJPCXZ7EwQhYSIaudDqPKFI';
-// ════════════════════════════════════════════════
 
-var supabase    = null;
-var currentUser = null;
-var searchDebounce = null;
+var supabase=null,currentUser=null,searchDebounce=null;
 
-// ── DEBUG ─────────────────────────────────────
-function showDebug(msg) {
-  var b = document.getElementById('debug-banner');
-  var m = document.getElementById('debug-msg');
-  if (b && m) { m.textContent = msg; b.classList.add('show'); }
-  console.error('[AlumniConnect]', msg);
-}
+function showDebug(msg){var b=document.getElementById('debug-banner'),m=document.getElementById('debug-msg');if(b&&m){m.textContent=msg;b.classList.add('show');}console.error('[AC]',msg);}
 
-// ── INIT ──────────────────────────────────────
-function init() {
+function init(){
   showPage('page-landing');
-
-  if (!window.supabase) {
-    showDebug('window.supabase tidak tersedia. Library mungkin belum selesai load.');
-    return;
-  }
-
-  try {
-    supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-  } catch(e) {
-    showDebug('Gagal inisialisasi Supabase: ' + e.message);
-    return;
-  }
-
-  // Tes koneksi ringan ke Supabase
-  supabase.from('alumni').select('id', { count: 'exact', head: true })
-    .then(function(res) {
-      if (res.error) {
-        showDebug('Supabase terhubung tapi query gagal: ' + res.error.message + ' | Pastikan tabel "alumni" sudah dibuat dan RLS policy sudah diatur.');
-      } else {
-        console.log('Supabase OK, total alumni:', res.count);
-      }
-    })
-    .catch(function(e) {
-      showDebug('Tidak dapat menjangkau Supabase: ' + e.message);
-    });
-
+  if(!window.supabase){showDebug('window.supabase tidak tersedia.');return;}
+  try{supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);}
+  catch(e){showDebug('Gagal inisialisasi Supabase: '+e.message);return;}
+  supabase.from('alumni').select('id',{count:'exact',head:true}).then(function(r){
+    if(r.error)showDebug('Query gagal: '+r.error.message+' | Pastikan tabel alumni ada dan RLS sudah diatur.');
+  }).catch(function(e){showDebug('Tidak dapat menjangkau Supabase: '+e.message);});
   checkSession();
   loadLandingStat();
 }
 
-async function checkSession() {
-  var session = getSession();
-  if (!session || !supabase) return;
-  try {
-    var res = await supabase.from('alumni').select('*').eq('id', session.id).single();
-    if (!res.error && res.data) {
-      currentUser = res.data;
-      saveSession(res.data);
-      enterApp();
-    } else {
-      clearSession();
-    }
-  } catch(e) { clearSession(); }
+async function checkSession(){
+  var s=getSession();if(!s||!supabase)return;
+  try{
+    var r=await supabase.from('alumni').select('*').eq('id',s.id).single();
+    if(!r.error&&r.data){currentUser=r.data;saveSession(r.data);enterApp();}else{clearSession();}
+  }catch(e){clearSession();}
 }
 
-// ── AUTH ──────────────────────────────────────
-async function hashPassword(password) {
-  var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password));
-  return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+async function hashPassword(p){
+  var buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(p));
+  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
 }
 
-async function doRegister() {
-  var name      = document.getElementById('reg-name').value.trim();
-  var email     = document.getElementById('reg-email').value.trim().toLowerCase();
-  var prodi     = document.getElementById('reg-prodi').value;
-  var tahun     = parseInt(document.getElementById('reg-tahun').value);
-  var pekerjaan = document.getElementById('reg-pekerjaan').value.trim();
-  var password  = document.getElementById('reg-password').value;
-  var errEl     = document.getElementById('register-error');
-  var sucEl     = document.getElementById('register-success');
-  var btn       = document.getElementById('btn-register');
-
-  sucEl.classList.add('hidden');
-  errEl.classList.add('hidden');
-
-  if (!name || !email || !prodi || !tahun || !pekerjaan || !password)
-    return showError(errEl, 'Semua field wajib diisi.');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-    return showError(errEl, 'Format email tidak valid.');
-  if (password.length < 6)
-    return showError(errEl, 'Password minimal 6 karakter.');
-  if (!supabase)
-    return showError(errEl, 'Database belum terhubung. Refresh halaman dan coba lagi.');
-
-  setLoading(btn, true, 'Mendaftarkan...');
-  try {
-    var chk = await supabase.from('alumni').select('id').eq('email', email).maybeSingle();
-    if (chk.data) { setLoading(btn, false, 'Buat Akun'); return showError(errEl, 'Email sudah terdaftar. Silakan login.'); }
-
-    var hashedPw = await hashPassword(password);
-    var ins = await supabase.from('alumni')
-      .insert([{ name:name, email:email, prodi:prodi, tahun:tahun, pekerjaan:pekerjaan, password_hash:hashedPw }])
-      .select().single();
-    if (ins.error) throw ins.error;
-
-    await supabase.from('milestones').insert([{
-      alumni_id: ins.data.id, year: tahun, pos: 'Lulus Sarjana',
-      company: prodi, type: 'start',
-      description: 'Menyelesaikan studi dan siap memasuki dunia profesional.'
-    }]);
-
-    setLoading(btn, false, 'Buat Akun');
-    sucEl.textContent = '✅ Akun berhasil dibuat! Silakan login.';
-    sucEl.classList.remove('hidden');
+async function doRegister(){
+  var name=document.getElementById('reg-name').value.trim();
+  var email=document.getElementById('reg-email').value.trim().toLowerCase();
+  var prodi=document.getElementById('reg-prodi').value;
+  var tahun=parseInt(document.getElementById('reg-tahun').value);
+  var pekerjaan=document.getElementById('reg-pekerjaan').value.trim();
+  var password=document.getElementById('reg-password').value;
+  var errEl=document.getElementById('register-error');
+  var sucEl=document.getElementById('register-success');
+  var btn=document.getElementById('btn-register');
+  sucEl.classList.add('hidden');errEl.classList.add('hidden');
+  if(!name||!email||!prodi||!tahun||!pekerjaan||!password)return showError(errEl,'Semua field wajib diisi.');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return showError(errEl,'Format email tidak valid.');
+  if(password.length<6)return showError(errEl,'Password minimal 6 karakter.');
+  if(!supabase)return showError(errEl,'Database belum terhubung. Refresh halaman.');
+  setLoading(btn,true,'Mendaftarkan...');
+  try{
+    var chk=await supabase.from('alumni').select('id').eq('email',email).maybeSingle();
+    if(chk.data){setLoading(btn,false,'Buat Akun');return showError(errEl,'Email sudah terdaftar.');}
+    var hp=await hashPassword(password);
+    var ins=await supabase.from('alumni').insert([{name:name,email:email,prodi:prodi,tahun:tahun,pekerjaan:pekerjaan,password_hash:hp}]).select().single();
+    if(ins.error)throw ins.error;
+    await supabase.from('milestones').insert([{alumni_id:ins.data.id,year:tahun,pos:'Lulus Sarjana',company:prodi,type:'start',description:'Menyelesaikan studi dan siap memasuki dunia profesional.'}]);
+    setLoading(btn,false,'Buat Akun');
+    sucEl.textContent='✅ Akun berhasil dibuat! Silakan login.';sucEl.classList.remove('hidden');
     clearFields(['reg-name','reg-email','reg-prodi','reg-tahun','reg-pekerjaan','reg-password']);
-    setTimeout(function(){ showPage('page-login'); }, 1500);
-  } catch(err) {
-    setLoading(btn, false, 'Buat Akun');
-    showError(errEl, 'Gagal mendaftar: ' + err.message);
-  }
+    setTimeout(function(){showPage('page-login');},1500);
+  }catch(err){setLoading(btn,false,'Buat Akun');showError(errEl,'Gagal mendaftar: '+err.message);}
 }
 
-async function doLogin() {
-  var email    = document.getElementById('login-email').value.trim().toLowerCase();
-  var password = document.getElementById('login-password').value;
-  var errEl    = document.getElementById('login-error');
-  var btn      = document.getElementById('btn-login');
-
+async function doLogin(){
+  var email=document.getElementById('login-email').value.trim().toLowerCase();
+  var password=document.getElementById('login-password').value;
+  var errEl=document.getElementById('login-error');
+  var btn=document.getElementById('btn-login');
   errEl.classList.add('hidden');
-  if (!email || !password) return showError(errEl, 'Email dan password wajib diisi.');
-  if (!supabase) return showError(errEl, 'Database belum terhubung. Refresh halaman dan coba lagi.');
-
-  setLoading(btn, true, 'Masuk...');
-  try {
-    var hashedPw = await hashPassword(password);
-    var res = await supabase.from('alumni')
-      .select('*').eq('email', email).eq('password_hash', hashedPw).maybeSingle();
-    if (res.error) throw res.error;
-    if (!res.data) { setLoading(btn, false, 'Masuk'); return showError(errEl, 'Email atau password salah.'); }
-
-    currentUser = res.data;
-    saveSession(res.data);
+  if(!email||!password)return showError(errEl,'Email dan password wajib diisi.');
+  if(!supabase)return showError(errEl,'Database belum terhubung. Refresh halaman.');
+  setLoading(btn,true,'Masuk...');
+  try{
+    var hp=await hashPassword(password);
+    var r=await supabase.from('alumni').select('*').eq('email',email).eq('password_hash',hp).maybeSingle();
+    if(r.error)throw r.error;
+    if(!r.data){setLoading(btn,false,'Masuk');return showError(errEl,'Email atau password salah.');}
+    currentUser=r.data;saveSession(r.data);
     clearFields(['login-email','login-password']);
-    setLoading(btn, false, 'Masuk');
-    enterApp();
-  } catch(err) {
-    setLoading(btn, false, 'Masuk');
-    showError(errEl, 'Terjadi kesalahan: ' + err.message);
-  }
+    setLoading(btn,false,'Masuk');enterApp();
+  }catch(err){setLoading(btn,false,'Masuk');showError(errEl,'Terjadi kesalahan: '+err.message);}
 }
 
-function doLogout() {
-  currentUser = null;
-  clearSession();
-  showPage('page-landing');
-  loadLandingStat();
-  showToast('👋 Sampai jumpa!');
-}
+function doLogout(){currentUser=null;clearSession();showPage('page-landing');loadLandingStat();showToast('👋 Sampai jumpa!');}
 
-// ── APP ───────────────────────────────────────
-function enterApp() {
-  showPage('page-app');
-  updateSidebar();
-  document.querySelectorAll('.nav-item').forEach(function(b){ b.classList.remove('active'); });
+function enterApp(){
+  showPage('page-app');updateSidebar();
+  document.querySelectorAll('.nav-item').forEach(function(b){b.classList.remove('active');});
   document.querySelector('[data-tab="tab-dashboard"]').classList.add('active');
-  document.querySelectorAll('.tab-content').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active');});
   document.getElementById('tab-dashboard').classList.add('active');
-  document.getElementById('topbar-title').textContent = 'Dashboard';
+  document.getElementById('topbar-title').textContent='Dashboard';
   renderDashboard();
 }
 
-function updateSidebar() {
-  if (!currentUser) return;
-  document.getElementById('sidebar-user-info').innerHTML =
-    '<strong>' + currentUser.name + '</strong>' + currentUser.prodi;
-  var chip = document.getElementById('topbar-user');
-  if (chip) chip.textContent = currentUser.name.split(' ')[0];
+function updateSidebar(){
+  if(!currentUser)return;
+  document.getElementById('sidebar-user-info').innerHTML='<strong>'+currentUser.name+'</strong>'+currentUser.prodi;
+  var chip=document.getElementById('topbar-user');if(chip)chip.textContent=currentUser.name.split(' ')[0];
 }
 
-// ── DASHBOARD ─────────────────────────────────
-async function renderDashboard() {
-  if (!currentUser || !supabase) return;
-  var hour = new Date().getHours();
-  var greeting = hour < 12 ? 'Selamat Pagi' : hour < 17 ? 'Selamat Siang' : 'Selamat Malam';
-  document.getElementById('dash-greeting').textContent = greeting + ', ' + currentUser.name.split(' ')[0] + '! 👋';
-  document.getElementById('dash-prodi').textContent = currentUser.prodi;
-  document.getElementById('dash-job').textContent = currentUser.pekerjaan;
-  document.getElementById('dash-tahun').textContent = currentUser.tahun;
+async function renderDashboard(){
+  if(!currentUser||!supabase)return;
+  var hour=new Date().getHours();
+  var g=hour<12?'Selamat Pagi':hour<17?'Selamat Siang':'Selamat Malam';
+  document.getElementById('dash-greeting').textContent=g+', '+currentUser.name.split(' ')[0]+'! 👋';
+  document.getElementById('dash-prodi').textContent=currentUser.prodi;
+  document.getElementById('dash-job').textContent=currentUser.pekerjaan;
+  document.getElementById('dash-tahun').textContent=currentUser.tahun;
+  var cnt=await supabase.from('alumni').select('*',{count:'exact',head:true});
+  animateCount(document.getElementById('dash-total'),cnt.count||0);
+  var rec=await supabase.from('alumni').select('*').order('created_at',{ascending:false}).limit(6);
+  var container=document.getElementById('recent-alumni');container.innerHTML='';
+  if(!rec.data||rec.data.length===0){container.innerHTML='<p style="color:var(--text-light);font-size:.9rem">Belum ada alumni lain.</p>';return;}
+  rec.data.forEach(function(a){container.appendChild(buildAlumniCard(a));});
+}
 
-  var cnt = await supabase.from('alumni').select('*', { count: 'exact', head: true });
-  animateCount(document.getElementById('dash-total'), cnt.count || 0);
+async function loadLandingStat(){
+  if(!supabase)return;
+  try{var r=await supabase.from('alumni').select('*',{count:'exact',head:true});animateCount(document.getElementById('stat-count'),r.count||0);}catch(_){}
+}
 
-  var rec = await supabase.from('alumni').select('*').order('created_at', { ascending: false }).limit(6);
-  var container = document.getElementById('recent-alumni');
-  container.innerHTML = '';
-  if (!rec.data || rec.data.length === 0) {
-    container.innerHTML = '<p style="color:var(--text-light);font-size:.9rem">Belum ada alumni lain.</p>';
-    return;
+// ── PROFIL ──────────────────────────────────
+function calcCompletion(u){
+  var fields=['name','email','no_hp','prodi','tahun','pekerjaan','status_kerja','posisi','alamat_kantor','linkedin','instagram','facebook','tiktok'];
+  var filled=fields.filter(function(f){return u[f]&&String(u[f]).trim()!=='';}).length;
+  return Math.round((filled/fields.length)*100);
+}
+
+function renderProfile(){
+  if(!currentUser)return;
+  var u=currentUser;
+  document.getElementById('profile-avatar-circle').textContent=u.name.charAt(0).toUpperCase();
+  document.getElementById('profile-name-big').textContent=u.name;
+  document.getElementById('profile-job-big').textContent=u.pekerjaan||'—';
+  document.getElementById('profile-badge-prodi').textContent=u.prodi;
+  document.getElementById('profile-badge-tahun').textContent='Lulus '+u.tahun;
+  var sb=document.getElementById('profile-badge-status');
+  if(u.status_kerja){sb.textContent=u.status_kerja;sb.className='badge '+(u.status_kerja==='PNS'?'pns':u.status_kerja==='Swasta'?'swasta':'wirausaha');sb.classList.remove('hidden');}
+  else{sb.classList.add('hidden');}
+
+  // Sosmed links di kartu kiri
+  var sl=document.getElementById('profile-sosmed-links');sl.innerHTML='';
+  var smItems=[
+    {key:'linkedin',icon:'in',label:'LinkedIn'},
+    {key:'instagram',icon:'ig',label:'Instagram'},
+    {key:'facebook',icon:'fb',label:'Facebook'},
+    {key:'tiktok',icon:'tt',label:'TikTok'}
+  ];
+  smItems.forEach(function(sm){
+    if(u[sm.key]){
+      var a=document.createElement('a');a.className='sosmed-link';a.href='#';a.innerHTML='<span class="sm-icon">'+sm.icon+'</span>'+u[sm.key];
+      sl.appendChild(a);
+    }
+  });
+
+  // Detail rows
+  function setDetail(id,val){
+    var el=document.getElementById(id);if(!el)return;
+    if(val&&String(val).trim()!==''){el.textContent=val;el.className='';}
+    else{el.textContent='Belum diisi';el.className='detail-empty';}
   }
-  rec.data.forEach(function(a){ container.appendChild(buildAlumniCard(a)); });
+  setDetail('pd-name',u.name);
+  setDetail('pd-email',u.email);
+  setDetail('pd-hp',u.no_hp);
+  setDetail('pd-prodi',u.prodi);
+  setDetail('pd-tahun',u.tahun);
+  setDetail('pd-status',u.status_kerja);
+  setDetail('pd-posisi',u.posisi);
+  setDetail('pd-pekerjaan',u.pekerjaan);
+  setDetail('pd-alamat-kantor',u.alamat_kantor);
+  setDetail('pd-sosmed-kantor',u.sosmed_kantor);
+  setDetail('pd-linkedin',u.linkedin);
+  setDetail('pd-instagram',u.instagram);
+  setDetail('pd-facebook',u.facebook);
+  setDetail('pd-tiktok',u.tiktok);
+
+  // Progress bar
+  var pct=calcCompletion(u);
+  document.getElementById('complete-fill').style.width=pct+'%';
+  document.getElementById('complete-pct').textContent=pct+'%';
 }
 
-async function loadLandingStat() {
-  if (!supabase) return;
-  try {
-    var res = await supabase.from('alumni').select('*', { count: 'exact', head: true });
-    animateCount(document.getElementById('stat-count'), res.count || 0);
-  } catch(_) {}
+function switchProfileTab(el,secId){
+  document.querySelectorAll('.profile-tab').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
+  document.querySelectorAll('.profile-section').forEach(function(s){s.classList.remove('active');});
+  document.getElementById(secId).classList.add('active');
 }
 
-// ── PROFIL ────────────────────────────────────
-function renderProfile() {
-  if (!currentUser) return;
-  var u = currentUser;
-  document.getElementById('profile-avatar-circle').textContent = u.name.charAt(0).toUpperCase();
-  document.getElementById('profile-name-big').textContent = u.name;
-  document.getElementById('profile-job-big').textContent = u.pekerjaan;
-  document.getElementById('profile-badge-prodi').textContent = u.prodi;
-  document.getElementById('profile-badge-tahun').textContent = 'Lulus ' + u.tahun;
-  document.getElementById('pd-name').textContent = u.name;
-  document.getElementById('pd-email').textContent = u.email;
-  document.getElementById('pd-prodi').textContent = u.prodi;
-  document.getElementById('pd-tahun').textContent = u.tahun;
-  document.getElementById('pd-job').textContent = u.pekerjaan;
-}
-
-function openEditModal() {
-  document.getElementById('edit-name').value  = currentUser.name;
-  document.getElementById('edit-job').value   = currentUser.pekerjaan;
-  document.getElementById('edit-prodi').value = currentUser.prodi;
-  document.getElementById('edit-tahun').value = currentUser.tahun;
+function openEditModal(){
+  var u=currentUser;
+  var fields={
+    'edit-name':'name','edit-prodi':'prodi','edit-tahun':'tahun',
+    'edit-hp':'no_hp','edit-status':'status_kerja','edit-posisi':'posisi',
+    'edit-job':'pekerjaan','edit-alamat-kantor':'alamat_kantor',
+    'edit-sosmed-kantor':'sosmed_kantor','edit-linkedin':'linkedin',
+    'edit-instagram':'instagram','edit-tiktok':'tiktok','edit-facebook':'facebook'
+  };
+  Object.keys(fields).forEach(function(id){
+    var el=document.getElementById(id);if(el)el.value=u[fields[id]]||'';
+  });
   document.getElementById('modal-edit').classList.remove('hidden');
 }
 
-async function saveEdit() {
-  var name  = document.getElementById('edit-name').value.trim();
-  var job   = document.getElementById('edit-job').value.trim();
-  var prodi = document.getElementById('edit-prodi').value;
-  var tahun = parseInt(document.getElementById('edit-tahun').value);
-  if (!name || !job) return showToast('⚠️ Nama dan pekerjaan wajib diisi.');
-  var btn = document.getElementById('btn-save-edit');
-  setLoading(btn, true, 'Menyimpan...');
-  var res = await supabase.from('alumni')
-    .update({ name:name, pekerjaan:job, prodi:prodi, tahun:tahun })
-    .eq('id', currentUser.id).select().single();
-  setLoading(btn, false, 'Simpan');
-  if (res.error) return showToast('❌ Gagal menyimpan: ' + res.error.message);
-  currentUser = res.data;
-  saveSession(res.data);
-  closeModal('modal-edit');
-  renderProfile();
-  updateSidebar();
-  renderDashboard();
+async function saveEdit(){
+  var name=document.getElementById('edit-name').value.trim();
+  var job=document.getElementById('edit-job').value.trim();
+  if(!name||!job)return showToast('⚠️ Nama dan tempat bekerja wajib diisi.');
+  var btn=document.getElementById('btn-save-edit');
+  setLoading(btn,true,'Menyimpan...');
+  var payload={
+    name:name,
+    prodi:document.getElementById('edit-prodi').value,
+    tahun:parseInt(document.getElementById('edit-tahun').value),
+    no_hp:document.getElementById('edit-hp').value.trim(),
+    status_kerja:document.getElementById('edit-status').value,
+    posisi:document.getElementById('edit-posisi').value.trim(),
+    pekerjaan:job,
+    alamat_kantor:document.getElementById('edit-alamat-kantor').value.trim(),
+    sosmed_kantor:document.getElementById('edit-sosmed-kantor').value.trim(),
+    linkedin:document.getElementById('edit-linkedin').value.trim(),
+    instagram:document.getElementById('edit-instagram').value.trim(),
+    tiktok:document.getElementById('edit-tiktok').value.trim(),
+    facebook:document.getElementById('edit-facebook').value.trim()
+  };
+  var r=await supabase.from('alumni').update(payload).eq('id',currentUser.id).select().single();
+  setLoading(btn,false,'Simpan Semua');
+  if(r.error)return showToast('❌ Gagal menyimpan: '+r.error.message);
+  currentUser=r.data;saveSession(r.data);
+  closeModal('modal-edit');renderProfile();updateSidebar();
   showToast('✅ Profil berhasil diperbarui!');
 }
 
-// ── CARI ALUMNI ───────────────────────────────
-async function doSearch() {
+// ── CARI ALUMNI ─────────────────────────────
+async function doSearch(){
   clearTimeout(searchDebounce);
-  searchDebounce = setTimeout(async function() {
-    var query = (document.getElementById('search-input').value || '').trim();
-    var prodi = document.getElementById('search-prodi').value;
-    var req   = supabase.from('alumni').select('*').order('name');
-    if (query) req = req.ilike('name', '%' + query + '%');
-    if (prodi) req = req.eq('prodi', prodi);
-    var res = await req;
-    var container = document.getElementById('search-results');
-    var emptyEl   = document.getElementById('search-empty');
-    container.innerHTML = '';
-    if (res.error || !res.data || res.data.length === 0) {
-      emptyEl.classList.remove('hidden');
-    } else {
-      emptyEl.classList.add('hidden');
-      res.data.forEach(function(a){ container.appendChild(buildAlumniCard(a)); });
-    }
-  }, 300);
+  searchDebounce=setTimeout(async function(){
+    var query=(document.getElementById('search-input').value||'').trim();
+    var prodi=document.getElementById('search-prodi').value;
+    var status=document.getElementById('search-status').value;
+    var req=supabase.from('alumni').select('*').order('name');
+    if(query)req=req.ilike('name','%'+query+'%');
+    if(prodi)req=req.eq('prodi',prodi);
+    if(status)req=req.eq('status_kerja',status);
+    var res=await req;
+    var container=document.getElementById('search-results');
+    var emptyEl=document.getElementById('search-empty');
+    container.innerHTML='';
+    if(res.error||!res.data||res.data.length===0){emptyEl.classList.remove('hidden');}
+    else{emptyEl.classList.add('hidden');res.data.forEach(function(a){container.appendChild(buildAlumniCard(a));});}
+  },300);
 }
 
-// ── CAREER ────────────────────────────────────
-async function renderCareer() {
-  if (!currentUser || !supabase) return;
-  var res = await supabase.from('milestones')
-    .select('*').eq('alumni_id', currentUser.id).order('year', { ascending: true });
-  var timeline  = document.getElementById('career-timeline');
-  var emptyEl   = document.getElementById('career-empty');
-  var summaryEl = document.getElementById('career-summary-content');
-  timeline.innerHTML = '';
-  if (res.error || !res.data || res.data.length === 0) {
+// ── CAREER ──────────────────────────────────
+async function renderCareer(){
+  if(!currentUser||!supabase)return;
+  var res=await supabase.from('milestones').select('*').eq('alumni_id',currentUser.id).order('year',{ascending:true});
+  var timeline=document.getElementById('career-timeline');
+  var emptyEl=document.getElementById('career-empty');
+  var summaryEl=document.getElementById('career-summary-content');
+  timeline.innerHTML='';
+  if(res.error||!res.data||res.data.length===0){
     emptyEl.classList.remove('hidden');
-    summaryEl.innerHTML = '<p style="color:rgba(255,255,255,.45);font-size:.85rem">Belum ada data karier.</p>';
-    return;
+    summaryEl.innerHTML='<p style="color:rgba(255,255,255,.45);font-size:.85rem">Belum ada data karier.</p>';return;
   }
   emptyEl.classList.add('hidden');
-  var milestones = res.data;
-  var first   = milestones[0];
-  var currArr = milestones.filter(function(m){ return m.type === 'current'; });
-  var current = currArr.length ? currArr[currArr.length-1] : milestones[milestones.length-1];
-  summaryEl.innerHTML =
-    '<div class="career-summary-item"><div class="cs-icon">🎓</div><div><strong>Tahun Lulus</strong><span>' + first.year + '</span></div></div>' +
-    '<div class="career-summary-item"><div class="cs-icon">🚀</div><div><strong>Karier Pertama</strong><span>' + first.pos + ' — ' + first.company + '</span></div></div>' +
-    '<div class="career-summary-item"><div class="cs-icon">💼</div><div><strong>Posisi Terkini</strong><span>' + current.pos + ' — ' + current.company + '</span></div></div>' +
-    '<div class="career-summary-item"><div class="cs-icon">📊</div><div><strong>Total Milestone</strong><span>' + milestones.length + ' pencapaian</span></div></div>';
-  var typeBadge = { start:'🎓 Awal Karier', milestone:'⭐ Pencapaian', current:'🟢 Saat Ini' };
-  milestones.forEach(function(m) {
-    var item = document.createElement('div');
-    item.className = 'timeline-item' + (m.type === 'current' ? ' current' : '');
-    item.innerHTML =
-      '<div class="ti-year">' + m.year + '</div>' +
-      '<div class="ti-pos">'  + m.pos  + '</div>' +
-      '<div class="ti-company">' + m.company + '</div>' +
-      (m.description ? '<div class="ti-desc">' + m.description + '</div>' : '') +
-      '<div class="ti-badge"><span class="badge">' + (typeBadge[m.type] || m.type) + '</span></div>';
+  var ms=res.data,first=ms[0];
+  var currArr=ms.filter(function(m){return m.type==='current';});
+  var current=currArr.length?currArr[currArr.length-1]:ms[ms.length-1];
+  summaryEl.innerHTML=
+    '<div class="career-summary-item"><div class="cs-icon">🎓</div><div><strong>Tahun Lulus</strong><span>'+first.year+'</span></div></div>'+
+    '<div class="career-summary-item"><div class="cs-icon">🚀</div><div><strong>Karier Pertama</strong><span>'+first.pos+' — '+first.company+'</span></div></div>'+
+    '<div class="career-summary-item"><div class="cs-icon">💼</div><div><strong>Posisi Terkini</strong><span>'+current.pos+' — '+current.company+'</span></div></div>'+
+    '<div class="career-summary-item"><div class="cs-icon">📊</div><div><strong>Total Milestone</strong><span>'+ms.length+' pencapaian</span></div></div>';
+  var typeBadge={start:'🎓 Awal Karier',milestone:'⭐ Pencapaian',current:'🟢 Saat Ini'};
+  ms.forEach(function(m){
+    var item=document.createElement('div');item.className='timeline-item'+(m.type==='current'?' current':'');
+    item.innerHTML='<div class="ti-year">'+m.year+'</div><div class="ti-pos">'+m.pos+'</div><div class="ti-company">'+m.company+'</div>'+(m.description?'<div class="ti-desc">'+m.description+'</div>':'')+'<div class="ti-badge"><span class="badge">'+(typeBadge[m.type]||m.type)+'</span></div>';
     timeline.appendChild(item);
   });
 }
 
-function openCareerModal() {
-  ['career-year','career-pos','career-company','career-desc'].forEach(function(id){
-    document.getElementById(id).value = '';
-  });
-  document.getElementById('career-type').value = 'milestone';
+function openCareerModal(){
+  ['career-year','career-pos','career-company','career-desc'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('career-type').value='milestone';
   document.getElementById('modal-career').classList.remove('hidden');
 }
 
-async function saveCareer() {
-  var year    = parseInt(document.getElementById('career-year').value);
-  var pos     = document.getElementById('career-pos').value.trim();
-  var company = document.getElementById('career-company').value.trim();
-  var type    = document.getElementById('career-type').value;
-  var desc    = document.getElementById('career-desc').value.trim();
-  if (!year || !pos || !company) return showToast('⚠️ Tahun, posisi, dan perusahaan wajib diisi.');
-  var btn = document.getElementById('btn-save-career');
-  setLoading(btn, true, 'Menyimpan...');
-  var res = await supabase.from('milestones')
-    .insert([{ alumni_id:currentUser.id, year:year, pos:pos, company:company, type:type, description:desc }]);
-  setLoading(btn, false, 'Simpan');
-  if (res.error) return showToast('❌ Gagal menyimpan: ' + res.error.message);
-  closeModal('modal-career');
-  await renderCareer();
-  showToast('✅ Milestone berhasil ditambahkan!');
+async function saveCareer(){
+  var year=parseInt(document.getElementById('career-year').value);
+  var pos=document.getElementById('career-pos').value.trim();
+  var company=document.getElementById('career-company').value.trim();
+  var type=document.getElementById('career-type').value;
+  var desc=document.getElementById('career-desc').value.trim();
+  if(!year||!pos||!company)return showToast('⚠️ Tahun, posisi, dan perusahaan wajib diisi.');
+  var btn=document.getElementById('btn-save-career');setLoading(btn,true,'Menyimpan...');
+  var r=await supabase.from('milestones').insert([{alumni_id:currentUser.id,year:year,pos:pos,company:company,type:type,description:desc}]);
+  setLoading(btn,false,'Simpan');
+  if(r.error)return showToast('❌ Gagal menyimpan: '+r.error.message);
+  closeModal('modal-career');await renderCareer();showToast('✅ Milestone berhasil ditambahkan!');
 }
 
-// ── NAVIGASI ──────────────────────────────────
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
-  document.getElementById(id).classList.add('active');
-}
+// ── NAVIGASI ────────────────────────────────
+function showPage(id){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.getElementById(id).classList.add('active');}
 
-function switchTab(el) {
-  var tabId = el.dataset.tab;
-  document.querySelectorAll('.nav-item').forEach(function(b){ b.classList.remove('active'); });
-  el.classList.add('active');
-  document.querySelectorAll('.tab-content').forEach(function(t){ t.classList.remove('active'); });
-  document.getElementById(tabId).classList.add('active');
-  var titles = { 'tab-dashboard':'Dashboard','tab-profil':'Profil Saya','tab-cari':'Cari Alumni','tab-career':'Career Milestone' };
-  document.getElementById('topbar-title').textContent = titles[tabId] || '';
-  if (tabId === 'tab-profil')    renderProfile();
-  if (tabId === 'tab-career')    renderCareer();
-  if (tabId === 'tab-cari')      doSearch();
-  if (tabId === 'tab-dashboard') renderDashboard();
+function switchTab(el){
+  var tabId=el.dataset.tab;
+  document.querySelectorAll('.nav-item').forEach(function(b){b.classList.remove('active');});el.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active');});document.getElementById(tabId).classList.add('active');
+  var titles={'tab-dashboard':'Dashboard','tab-profil':'Profil Saya','tab-cari':'Cari Alumni','tab-career':'Career Milestone'};
+  document.getElementById('topbar-title').textContent=titles[tabId]||'';
+  if(tabId==='tab-profil')renderProfile();
+  if(tabId==='tab-career')renderCareer();
+  if(tabId==='tab-cari')doSearch();
+  if(tabId==='tab-dashboard')renderDashboard();
   document.getElementById('sidebar').classList.remove('open');
 }
 
-function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
 
-// ── HELPERS ───────────────────────────────────
-function buildAlumniCard(a) {
-  var div = document.createElement('div');
-  div.className = 'alumni-card';
-  div.innerHTML =
-    '<div class="alumni-card-avatar">' + a.name.charAt(0).toUpperCase() + '</div>' +
-    '<h4>' + a.name + '</h4>' +
-    '<p class="alumni-job">' + a.pekerjaan + '</p>' +
-    '<span class="badge">' + a.prodi + '</span>' +
-    '<span class="badge secondary">Lulus ' + a.tahun + '</span>';
+// ── HELPERS ─────────────────────────────────
+function buildAlumniCard(a){
+  var statusBadge='';
+  if(a.status_kerja){var sc=a.status_kerja==='PNS'?'pns':a.status_kerja==='Swasta'?'swasta':'wirausaha';statusBadge='<span class="badge '+sc+'">'+a.status_kerja+'</span>';}
+  var sosmedRow='';
+  if(a.linkedin||a.instagram||a.tiktok){
+    var links=[];
+    if(a.linkedin)links.push('in');if(a.instagram)links.push('ig');if(a.tiktok)links.push('tt');
+    sosmedRow='<div style="margin-top:8px;font-size:.75rem;color:var(--text-light);">'+links.join(' · ')+'</div>';
+  }
+  var div=document.createElement('div');div.className='alumni-card';
+  div.innerHTML=
+    '<div class="alumni-card-avatar">'+a.name.charAt(0).toUpperCase()+'</div>'+
+    '<h4>'+a.name+'</h4>'+
+    '<p class="alumni-job">'+(a.posisi?a.posisi+' · ':'')+a.pekerjaan+'</p>'+
+    '<span class="badge">'+a.prodi+'</span>'+
+    '<span class="badge secondary">Lulus '+a.tahun+'</span>'+
+    statusBadge+sosmedRow;
   return div;
 }
 
-function animateCount(el, target) {
-  if (!el) return;
-  var current = 0;
-  var step = Math.max(1, Math.floor(target / 30));
-  var iv = setInterval(function() {
-    current = Math.min(current + step, target);
-    el.textContent = current;
-    if (current >= target) clearInterval(iv);
-  }, 40);
+function animateCount(el,target){
+  if(!el)return;var current=0,step=Math.max(1,Math.floor(target/30));
+  var iv=setInterval(function(){current=Math.min(current+step,target);el.textContent=current;if(current>=target)clearInterval(iv);},40);
 }
-
-function setLoading(btn, loading, text) { if (!btn) return; btn.disabled = loading; btn.textContent = text; }
-function showError(el, msg) { if (el) { el.textContent = msg; el.classList.remove('hidden'); } }
-function clearFields(ids) { ids.forEach(function(id){ var el=document.getElementById(id); if(el) el.value=''; }); }
-function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-
-function getSession()     { try { return JSON.parse(localStorage.getItem('alumni_session') || 'null'); } catch { return null; } }
-function saveSession(user){ localStorage.setItem('alumni_session', JSON.stringify({ id: user.id, email: user.email })); }
-function clearSession()   { localStorage.removeItem('alumni_session'); }
-
+function setLoading(btn,loading,text){if(!btn)return;btn.disabled=loading;btn.textContent=text;}
+function showError(el,msg){if(el){el.textContent=msg;el.classList.remove('hidden');}}
+function clearFields(ids){ids.forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});}
+function closeModal(id){document.getElementById(id).classList.add('hidden');}
+function getSession(){try{return JSON.parse(localStorage.getItem('alumni_session')||'null');}catch{return null;}}
+function saveSession(user){localStorage.setItem('alumni_session',JSON.stringify({id:user.id,email:user.email}));}
+function clearSession(){localStorage.removeItem('alumni_session');}
 var toastTimer;
-function showToast(msg) {
-  var t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.remove('hidden');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(function(){ t.classList.add('hidden'); }, 3200);
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closeModal('modal-edit'); closeModal('modal-career'); }
-  if (e.key === 'Enter') {
-    if (document.getElementById('page-login').classList.contains('active'))    doLogin();
-    if (document.getElementById('page-register').classList.contains('active')) doRegister();
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.add('hidden');},3200);}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){closeModal('modal-edit');closeModal('modal-career');}
+  if(e.key==='Enter'){
+    if(document.getElementById('page-login').classList.contains('active'))doLogin();
+    if(document.getElementById('page-register').classList.contains('active'))doRegister();
   }
 });
 </script>
