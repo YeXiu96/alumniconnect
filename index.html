@@ -47,6 +47,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .form-group input,.form-group select,.form-group textarea{padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--white);font-family:'DM Sans',sans-serif;font-size:.95rem;color:var(--text-dark);transition:var(--transition);width:100%}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim);outline:none}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 /* LANDING */
 #page-landing{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
 .landing-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
@@ -85,7 +86,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .art-text p,.auth-text p{color:rgba(255,255,255,.5);line-height:1.7}
 .art-text,.auth-text{position:relative;z-index:2}
 .auth-right{flex:1;display:flex;align-items:center;justify-content:center;background:var(--cream);padding:32px}
-.auth-card{width:100%;max-width:440px;background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)}
+.auth-card{width:100%;max-width:480px;background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)}
 .auth-card h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin-bottom:6px}
 .auth-sub{color:var(--text-light);font-size:.9rem;margin-bottom:28px}
 .auth-switch{text-align:center;margin-top:20px;color:var(--text-light);font-size:.875rem}
@@ -139,25 +140,28 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .alumni-card{background:var(--white);border-radius:var(--radius);padding:20px;border:1.5px solid var(--cream-dark);transition:var(--transition)}
 .alumni-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--border)}
 .alumni-card-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:12px;font-family:'Playfair Display',serif}
-.alumni-card h4{font-size:.95rem;font-weight:600;color:var(--text-dark);margin-bottom:4px}
+.alumni-card h4{font-size:.95rem;font-weight:600;color:var(--text-dark);margin-bottom:2px}
+.alumni-card .alumni-nim{font-size:.75rem;color:var(--text-light);margin-bottom:4px;font-family:monospace;letter-spacing:.5px}
 .alumni-card .alumni-job{font-size:.8rem;color:var(--text-light);margin-bottom:8px;line-height:1.4}
 .badge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:600;background:var(--gold-dim);color:#8B6914;border:1px solid rgba(201,168,76,.25);margin-right:4px;margin-top:4px}
 .badge.secondary{background:rgba(11,20,55,.07);color:var(--navy);border-color:rgba(11,20,55,.1)}
 .badge.pns{background:rgba(46,204,113,.1);color:#1a7a45;border-color:rgba(46,204,113,.3)}
 .badge.swasta{background:rgba(52,152,219,.1);color:#1a5276;border-color:rgba(52,152,219,.3)}
 .badge.wirausaha{background:rgba(231,76,60,.1);color:#922b21;border-color:rgba(231,76,60,.3)}
+.badge.fakultas{background:rgba(155,89,182,.1);color:#6c3483;border-color:rgba(155,89,182,.3)}
 /* PROFILE */
 .profile-layout{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
 .profile-card-main{background:var(--navy);border-radius:var(--radius);padding:32px 24px;text-align:center;color:var(--white)}
 .profile-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;color:var(--navy);font-family:'Playfair Display',serif;margin:0 auto 16px;border:3px solid rgba(201,168,76,.3)}
-.profile-card-main h2{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:8px}
+.profile-card-main h2{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:4px}
+.profile-nim{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:8px;font-family:monospace;letter-spacing:.5px}
 .profile-tagline{color:rgba(255,255,255,.6);font-size:.85rem;margin-bottom:16px}
 .profile-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px}
 .sosmed-links{display:flex;flex-direction:column;gap:8px;margin-top:16px}
 .sosmed-link{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);font-size:.82rem;text-decoration:none;transition:var(--transition)}
 .sosmed-link:hover{background:rgba(255,255,255,.15);color:var(--white)}
 .sosmed-link .sm-icon{font-size:1rem;width:20px;text-align:center}
-.profile-tabs{display:flex;gap:8px;margin-bottom:20px;border-bottom:1px solid var(--cream-dark);padding-bottom:0}
+.profile-tabs{display:flex;gap:8px;margin-bottom:20px;border-bottom:1px solid var(--cream-dark);padding-bottom:0;flex-wrap:wrap}
 .profile-tab{background:none;padding:10px 16px;border-radius:var(--radius-sm) var(--radius-sm) 0 0;font-size:.85rem;font-weight:600;color:var(--text-light);border-bottom:2px solid transparent;margin-bottom:-1px}
 .profile-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
 .profile-details-card{background:var(--white);border-radius:var(--radius);padding:28px;border:1.5px solid var(--cream-dark)}
@@ -203,7 +207,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .ti-badge{margin-top:6px}
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(11,20,55,.6);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:1000;padding:24px;overflow-y:auto}
-.modal-card{background:var(--white);border-radius:var(--radius);padding:32px;width:100%;max-width:520px;box-shadow:var(--shadow-lg);animation:modalIn .2s ease;margin:auto}
+.modal-card{background:var(--white);border-radius:var(--radius);padding:32px;width:100%;max-width:560px;box-shadow:var(--shadow-lg);animation:modalIn .2s ease;margin:auto}
 @keyframes modalIn{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
 .modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--cream-dark)}
 .modal-header h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy)}
@@ -236,7 +240,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 @media(max-width:480px){
   .hero-cta{flex-direction:column}
   .stats-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
+  .form-row,.form-row-3{grid-template-columns:1fr}
   .search-bar-wrap{flex-direction:column}
 }
 </style>
@@ -289,8 +293,24 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
         <div id="register-error" class="alert-error hidden"></div>
         <div id="register-success" class="alert-success hidden"></div>
         <div class="form-group"><label>Nama Lengkap</label><input type="text" id="reg-name" placeholder="Contoh: Budi Santoso"/></div>
+        <div class="form-group"><label>NIM</label><input type="text" id="reg-nim" placeholder="Contoh: 2019001234"/></div>
         <div class="form-group"><label>Alamat Email</label><input type="email" id="reg-email" placeholder="email@contoh.com"/></div>
         <div class="form-row">
+          <div class="form-group"><label>Fakultas</label>
+            <select id="reg-fakultas">
+              <option value="">Pilih Fakultas</option>
+              <option>Fakultas Teknik</option>
+              <option>Fakultas Ekonomi & Bisnis</option>
+              <option>Fakultas Hukum</option>
+              <option>Fakultas Kedokteran</option>
+              <option>Fakultas Psikologi</option>
+              <option>Fakultas Ilmu Sosial & Politik</option>
+              <option>Fakultas Ilmu Komputer</option>
+              <option>Fakultas Pertanian</option>
+              <option>Fakultas Keguruan & Ilmu Pendidikan</option>
+              <option>Fakultas Kesehatan Masyarakat</option>
+            </select>
+          </div>
           <div class="form-group"><label>Program Studi</label>
             <select id="reg-prodi">
               <option value="">Pilih Prodi</option>
@@ -299,7 +319,10 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
               <option>Psikologi</option><option>Ilmu Komunikasi</option><option>Teknik Elektro</option><option>Teknik Sipil</option>
             </select>
           </div>
-          <div class="form-group"><label>Tahun Lulus</label><input type="number" id="reg-tahun" placeholder="2020" min="1990" max="2030"/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Tahun Masuk</label><input type="number" id="reg-tahun-masuk" placeholder="2019" min="1980" max="2030"/></div>
+          <div class="form-group"><label>Tanggal Lulus</label><input type="date" id="reg-tanggal-lulus"/></div>
         </div>
         <div class="form-group"><label>Pekerjaan Saat Ini</label><input type="text" id="reg-pekerjaan" placeholder="Contoh: Software Engineer di Gojek"/></div>
         <div class="form-group"><label>Password</label><input type="password" id="reg-password" placeholder="Minimal 6 karakter"/></div>
@@ -377,9 +400,9 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
       </div>
       <div class="stats-grid">
         <div class="stat-card accent"><div class="stat-icon">👥</div><div class="stat-info"><span id="dash-total" class="stat-num">—</span><small>Total Alumni</small></div></div>
-        <div class="stat-card"><div class="stat-icon">🎓</div><div class="stat-info"><span id="dash-prodi" class="stat-num">—</span><small>Program Studi</small></div></div>
-        <div class="stat-card"><div class="stat-icon">💼</div><div class="stat-info"><span id="dash-job" class="stat-num small-text">—</span><small>Pekerjaan</small></div></div>
-        <div class="stat-card"><div class="stat-icon">📅</div><div class="stat-info"><span id="dash-tahun" class="stat-num">—</span><small>Tahun Lulus</small></div></div>
+        <div class="stat-card"><div class="stat-icon">🏛️</div><div class="stat-info"><span id="dash-fakultas" class="stat-num small-text">—</span><small>Fakultas</small></div></div>
+        <div class="stat-card"><div class="stat-icon">🎓</div><div class="stat-info"><span id="dash-prodi" class="stat-num small-text">—</span><small>Program Studi</small></div></div>
+        <div class="stat-card"><div class="stat-icon">📅</div><div class="stat-info"><span id="dash-tahun" class="stat-num">—</span><small>Tahun Masuk</small></div></div>
       </div>
       <div class="section-header mt-lg"><h2>Alumni Terbaru</h2></div>
       <div class="alumni-grid" id="recent-alumni">
@@ -391,7 +414,6 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
     <div id="tab-profil" class="tab-content">
       <div class="section-header"><h1>Profil Saya</h1><p>Lengkapi data diri Anda secara sukarela</p></div>
 
-      <!-- Progress kelengkapan -->
       <div class="profile-complete">
         <div class="complete-bar-wrap">
           <div class="complete-label">Kelengkapan Profil</div>
@@ -404,8 +426,10 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
         <div class="profile-card-main">
           <div class="profile-avatar" id="profile-avatar-circle"></div>
           <h2 id="profile-name-big"></h2>
+          <p id="profile-nim-display" class="profile-nim"></p>
           <p id="profile-job-big" class="profile-tagline"></p>
           <div class="profile-badges">
+            <span id="profile-badge-fakultas" class="badge fakultas"></span>
             <span id="profile-badge-prodi" class="badge"></span>
             <span id="profile-badge-tahun" class="badge secondary"></span>
             <span id="profile-badge-status" class="badge"></span>
@@ -416,6 +440,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
         <div class="profile-details-card">
           <div class="profile-tabs">
             <button class="profile-tab active" onclick="switchProfileTab(this,'psec-data')">Data Diri</button>
+            <button class="profile-tab" onclick="switchProfileTab(this,'psec-akademik')">Akademik</button>
             <button class="profile-tab" onclick="switchProfileTab(this,'psec-kerja')">Info Kerja</button>
             <button class="profile-tab" onclick="switchProfileTab(this,'psec-sosmed')">Media Sosial</button>
           </div>
@@ -424,10 +449,18 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
           <div class="profile-section active" id="psec-data">
             <div class="profile-section-title">Informasi Pribadi</div>
             <div class="detail-row"><label>Nama Lengkap</label><span id="pd-name"></span></div>
+            <div class="detail-row"><label>NIM</label><span id="pd-nim"></span></div>
             <div class="detail-row"><label>Email</label><span id="pd-email"></span></div>
             <div class="detail-row"><label>No. HP</label><span id="pd-hp"></span></div>
+          </div>
+
+          <!-- Tab Akademik -->
+          <div class="profile-section" id="psec-akademik">
+            <div class="profile-section-title">Data Akademik</div>
+            <div class="detail-row"><label>Fakultas</label><span id="pd-fakultas"></span></div>
             <div class="detail-row"><label>Program Studi</label><span id="pd-prodi"></span></div>
-            <div class="detail-row"><label>Tahun Lulus</label><span id="pd-tahun"></span></div>
+            <div class="detail-row"><label>Tahun Masuk</label><span id="pd-tahun-masuk"></span></div>
+            <div class="detail-row"><label>Tanggal Lulus</label><span id="pd-tanggal-lulus"></span></div>
           </div>
 
           <!-- Tab Info Kerja -->
@@ -460,8 +493,21 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
       <div class="search-bar-wrap">
         <div class="search-bar">
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" id="search-input" placeholder="Cari nama alumni..." oninput="doSearch()"/>
+          <input type="text" id="search-input" placeholder="Cari nama / NIM alumni..." oninput="doSearch()"/>
         </div>
+        <select id="search-fakultas" onchange="doSearch()">
+          <option value="">Semua Fakultas</option>
+          <option>Fakultas Teknik</option>
+          <option>Fakultas Ekonomi & Bisnis</option>
+          <option>Fakultas Hukum</option>
+          <option>Fakultas Kedokteran</option>
+          <option>Fakultas Psikologi</option>
+          <option>Fakultas Ilmu Sosial & Politik</option>
+          <option>Fakultas Ilmu Komputer</option>
+          <option>Fakultas Pertanian</option>
+          <option>Fakultas Keguruan & Ilmu Pendidikan</option>
+          <option>Fakultas Kesehatan Masyarakat</option>
+        </select>
         <select id="search-prodi" onchange="doSearch()">
           <option value="">Semua Prodi</option>
           <option>Teknik Informatika</option><option>Sistem Informasi</option><option>Manajemen</option>
@@ -505,7 +551,26 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 
     <div class="modal-section-label">📋 Data Pribadi</div>
     <div class="form-group"><label>Nama Lengkap</label><input id="edit-name" type="text"/></div>
+    <div class="form-group"><label>NIM</label><input id="edit-nim" type="text" placeholder="Nomor Induk Mahasiswa"/></div>
+    <div class="form-group"><label>No. HP / WhatsApp</label><input id="edit-hp" type="text" placeholder="08xxxxxxxxxx"/></div>
+
+    <div class="modal-section-label">🎓 Data Akademik</div>
     <div class="form-row">
+      <div class="form-group"><label>Fakultas</label>
+        <select id="edit-fakultas">
+          <option value="">— Pilih Fakultas —</option>
+          <option>Fakultas Teknik</option>
+          <option>Fakultas Ekonomi & Bisnis</option>
+          <option>Fakultas Hukum</option>
+          <option>Fakultas Kedokteran</option>
+          <option>Fakultas Psikologi</option>
+          <option>Fakultas Ilmu Sosial & Politik</option>
+          <option>Fakultas Ilmu Komputer</option>
+          <option>Fakultas Pertanian</option>
+          <option>Fakultas Keguruan & Ilmu Pendidikan</option>
+          <option>Fakultas Kesehatan Masyarakat</option>
+        </select>
+      </div>
       <div class="form-group"><label>Program Studi</label>
         <select id="edit-prodi">
           <option>Teknik Informatika</option><option>Sistem Informasi</option><option>Manajemen</option>
@@ -513,9 +578,11 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
           <option>Psikologi</option><option>Ilmu Komunikasi</option><option>Teknik Elektro</option><option>Teknik Sipil</option>
         </select>
       </div>
-      <div class="form-group"><label>Tahun Lulus</label><input id="edit-tahun" type="number"/></div>
     </div>
-    <div class="form-group"><label>No. HP / WhatsApp</label><input id="edit-hp" type="text" placeholder="08xxxxxxxxxx"/></div>
+    <div class="form-row">
+      <div class="form-group"><label>Tahun Masuk</label><input id="edit-tahun-masuk" type="number" placeholder="2019" min="1980" max="2030"/></div>
+      <div class="form-group"><label>Tanggal Lulus</label><input id="edit-tanggal-lulus" type="date"/></div>
+    </div>
 
     <div class="modal-section-label">💼 Informasi Pekerjaan</div>
     <div class="form-group"><label>Status Pekerjaan</label>
@@ -618,30 +685,52 @@ async function hashPassword(p){
 
 async function doRegister(){
   var name=document.getElementById('reg-name').value.trim();
+  var nim=document.getElementById('reg-nim').value.trim();
   var email=document.getElementById('reg-email').value.trim().toLowerCase();
+  var fakultas=document.getElementById('reg-fakultas').value;
   var prodi=document.getElementById('reg-prodi').value;
-  var tahun=parseInt(document.getElementById('reg-tahun').value);
+  var tahunMasuk=parseInt(document.getElementById('reg-tahun-masuk').value);
+  var tanggalLulus=document.getElementById('reg-tanggal-lulus').value;
   var pekerjaan=document.getElementById('reg-pekerjaan').value.trim();
   var password=document.getElementById('reg-password').value;
   var errEl=document.getElementById('register-error');
   var sucEl=document.getElementById('register-success');
   var btn=document.getElementById('btn-register');
   sucEl.classList.add('hidden');errEl.classList.add('hidden');
-  if(!name||!email||!prodi||!tahun||!pekerjaan||!password)return showError(errEl,'Semua field wajib diisi.');
+  if(!name||!nim||!email||!fakultas||!prodi||!tahunMasuk||!pekerjaan||!password)
+    return showError(errEl,'Semua field wajib diisi (kecuali tanggal lulus).');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return showError(errEl,'Format email tidak valid.');
   if(password.length<6)return showError(errEl,'Password minimal 6 karakter.');
   if(!supabase)return showError(errEl,'Database belum terhubung. Refresh halaman.');
   setLoading(btn,true,'Mendaftarkan...');
   try{
-    var chk=await supabase.from('alumni').select('id').eq('email',email).maybeSingle();
-    if(chk.data){setLoading(btn,false,'Buat Akun');return showError(errEl,'Email sudah terdaftar.');}
+    var chkEmail=await supabase.from('alumni').select('id').eq('email',email).maybeSingle();
+    if(chkEmail.data){setLoading(btn,false,'Buat Akun');return showError(errEl,'Email sudah terdaftar.');}
+    var chkNim=await supabase.from('alumni').select('id').eq('nim',nim).maybeSingle();
+    if(chkNim.data){setLoading(btn,false,'Buat Akun');return showError(errEl,'NIM sudah terdaftar.');}
     var hp=await hashPassword(password);
-    var ins=await supabase.from('alumni').insert([{name:name,email:email,prodi:prodi,tahun:tahun,pekerjaan:pekerjaan,password_hash:hp}]).select().single();
+    var payload={
+      name:name,nim:nim,email:email,
+      fakultas:fakultas,prodi:prodi,
+      tahun_masuk:tahunMasuk,
+      tanggal_lulus:tanggalLulus||null,
+      pekerjaan:pekerjaan,
+      password_hash:hp
+    };
+    var ins=await supabase.from('alumni').insert([payload]).select().single();
     if(ins.error)throw ins.error;
-    await supabase.from('milestones').insert([{alumni_id:ins.data.id,year:tahun,pos:'Lulus Sarjana',company:prodi,type:'start',description:'Menyelesaikan studi dan siap memasuki dunia profesional.'}]);
+    // Buat milestone awal otomatis
+    await supabase.from('milestones').insert([{
+      alumni_id:ins.data.id,
+      year:tahunMasuk,
+      pos:'Masuk Perguruan Tinggi',
+      company:prodi+' — '+fakultas,
+      type:'start',
+      description:'Memulai studi di '+prodi+'.'
+    }]);
     setLoading(btn,false,'Buat Akun');
     sucEl.textContent='✅ Akun berhasil dibuat! Silakan login.';sucEl.classList.remove('hidden');
-    clearFields(['reg-name','reg-email','reg-prodi','reg-tahun','reg-pekerjaan','reg-password']);
+    clearFields(['reg-name','reg-nim','reg-email','reg-fakultas','reg-prodi','reg-tahun-masuk','reg-tanggal-lulus','reg-pekerjaan','reg-password']);
     setTimeout(function(){showPage('page-login');},1500);
   }catch(err){setLoading(btn,false,'Buat Akun');showError(errEl,'Gagal mendaftar: '+err.message);}
 }
@@ -689,9 +778,9 @@ async function renderDashboard(){
   var hour=new Date().getHours();
   var g=hour<12?'Selamat Pagi':hour<17?'Selamat Siang':'Selamat Malam';
   document.getElementById('dash-greeting').textContent=g+', '+currentUser.name.split(' ')[0]+'! 👋';
+  document.getElementById('dash-fakultas').textContent=currentUser.fakultas||'—';
   document.getElementById('dash-prodi').textContent=currentUser.prodi;
-  document.getElementById('dash-job').textContent=currentUser.pekerjaan;
-  document.getElementById('dash-tahun').textContent=currentUser.tahun;
+  document.getElementById('dash-tahun').textContent=currentUser.tahun_masuk||'—';
   var cnt=await supabase.from('alumni').select('*',{count:'exact',head:true});
   animateCount(document.getElementById('dash-total'),cnt.count||0);
   var rec=await supabase.from('alumni').select('*').order('created_at',{ascending:false}).limit(6);
@@ -707,9 +796,16 @@ async function loadLandingStat(){
 
 // ── PROFIL ──────────────────────────────────
 function calcCompletion(u){
-  var fields=['name','email','no_hp','prodi','tahun','pekerjaan','status_kerja','posisi','alamat_kantor','linkedin','instagram','facebook','tiktok'];
+  var fields=['name','nim','email','no_hp','fakultas','prodi','tahun_masuk','tanggal_lulus','pekerjaan','status_kerja','posisi','alamat_kantor','linkedin','instagram','facebook','tiktok'];
   var filled=fields.filter(function(f){return u[f]&&String(u[f]).trim()!=='';}).length;
   return Math.round((filled/fields.length)*100);
+}
+
+function formatTanggal(str){
+  if(!str)return null;
+  var d=new Date(str);
+  if(isNaN(d))return str;
+  return d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
 }
 
 function renderProfile(){
@@ -717,39 +813,41 @@ function renderProfile(){
   var u=currentUser;
   document.getElementById('profile-avatar-circle').textContent=u.name.charAt(0).toUpperCase();
   document.getElementById('profile-name-big').textContent=u.name;
+  document.getElementById('profile-nim-display').textContent=u.nim?'NIM: '+u.nim:'';
   document.getElementById('profile-job-big').textContent=u.pekerjaan||'—';
+
+  var bf=document.getElementById('profile-badge-fakultas');
+  if(u.fakultas){bf.textContent=u.fakultas.replace('Fakultas ','Fak. ');bf.classList.remove('hidden');}
+  else{bf.classList.add('hidden');}
   document.getElementById('profile-badge-prodi').textContent=u.prodi;
-  document.getElementById('profile-badge-tahun').textContent='Lulus '+u.tahun;
+  document.getElementById('profile-badge-tahun').textContent='Masuk '+u.tahun_masuk;
   var sb=document.getElementById('profile-badge-status');
   if(u.status_kerja){sb.textContent=u.status_kerja;sb.className='badge '+(u.status_kerja==='PNS'?'pns':u.status_kerja==='Swasta'?'swasta':'wirausaha');sb.classList.remove('hidden');}
   else{sb.classList.add('hidden');}
 
-  // Sosmed links di kartu kiri
   var sl=document.getElementById('profile-sosmed-links');sl.innerHTML='';
-  var smItems=[
-    {key:'linkedin',icon:'in',label:'LinkedIn'},
-    {key:'instagram',icon:'ig',label:'Instagram'},
-    {key:'facebook',icon:'fb',label:'Facebook'},
-    {key:'tiktok',icon:'tt',label:'TikTok'}
-  ];
+  var smItems=[{key:'linkedin',icon:'in'},{key:'instagram',icon:'ig'},{key:'facebook',icon:'fb'},{key:'tiktok',icon:'tt'}];
   smItems.forEach(function(sm){
     if(u[sm.key]){
-      var a=document.createElement('a');a.className='sosmed-link';a.href='#';a.innerHTML='<span class="sm-icon">'+sm.icon+'</span>'+u[sm.key];
+      var a=document.createElement('a');a.className='sosmed-link';a.href='#';
+      a.innerHTML='<span class="sm-icon">'+sm.icon+'</span>'+u[sm.key];
       sl.appendChild(a);
     }
   });
 
-  // Detail rows
   function setDetail(id,val){
     var el=document.getElementById(id);if(!el)return;
     if(val&&String(val).trim()!==''){el.textContent=val;el.className='';}
     else{el.textContent='Belum diisi';el.className='detail-empty';}
   }
   setDetail('pd-name',u.name);
+  setDetail('pd-nim',u.nim);
   setDetail('pd-email',u.email);
   setDetail('pd-hp',u.no_hp);
+  setDetail('pd-fakultas',u.fakultas);
   setDetail('pd-prodi',u.prodi);
-  setDetail('pd-tahun',u.tahun);
+  setDetail('pd-tahun-masuk',u.tahun_masuk);
+  setDetail('pd-tanggal-lulus',formatTanggal(u.tanggal_lulus));
   setDetail('pd-status',u.status_kerja);
   setDetail('pd-posisi',u.posisi);
   setDetail('pd-pekerjaan',u.pekerjaan);
@@ -760,7 +858,6 @@ function renderProfile(){
   setDetail('pd-facebook',u.facebook);
   setDetail('pd-tiktok',u.tiktok);
 
-  // Progress bar
   var pct=calcCompletion(u);
   document.getElementById('complete-fill').style.width=pct+'%';
   document.getElementById('complete-pct').textContent=pct+'%';
@@ -775,16 +872,21 @@ function switchProfileTab(el,secId){
 
 function openEditModal(){
   var u=currentUser;
-  var fields={
-    'edit-name':'name','edit-prodi':'prodi','edit-tahun':'tahun',
-    'edit-hp':'no_hp','edit-status':'status_kerja','edit-posisi':'posisi',
+  var map={
+    'edit-name':'name','edit-nim':'nim','edit-hp':'no_hp',
+    'edit-fakultas':'fakultas','edit-prodi':'prodi',
+    'edit-tahun-masuk':'tahun_masuk',
+    'edit-status':'status_kerja','edit-posisi':'posisi',
     'edit-job':'pekerjaan','edit-alamat-kantor':'alamat_kantor',
     'edit-sosmed-kantor':'sosmed_kantor','edit-linkedin':'linkedin',
     'edit-instagram':'instagram','edit-tiktok':'tiktok','edit-facebook':'facebook'
   };
-  Object.keys(fields).forEach(function(id){
-    var el=document.getElementById(id);if(el)el.value=u[fields[id]]||'';
+  Object.keys(map).forEach(function(id){
+    var el=document.getElementById(id);if(el)el.value=u[map[id]]||'';
   });
+  // tanggal lulus khusus (format date)
+  var tl=document.getElementById('edit-tanggal-lulus');
+  if(tl)tl.value=u.tanggal_lulus?u.tanggal_lulus.substring(0,10):'';
   document.getElementById('modal-edit').classList.remove('hidden');
 }
 
@@ -794,11 +896,15 @@ async function saveEdit(){
   if(!name||!job)return showToast('⚠️ Nama dan tempat bekerja wajib diisi.');
   var btn=document.getElementById('btn-save-edit');
   setLoading(btn,true,'Menyimpan...');
+  var tl=document.getElementById('edit-tanggal-lulus').value;
   var payload={
     name:name,
-    prodi:document.getElementById('edit-prodi').value,
-    tahun:parseInt(document.getElementById('edit-tahun').value),
+    nim:document.getElementById('edit-nim').value.trim(),
     no_hp:document.getElementById('edit-hp').value.trim(),
+    fakultas:document.getElementById('edit-fakultas').value,
+    prodi:document.getElementById('edit-prodi').value,
+    tahun_masuk:parseInt(document.getElementById('edit-tahun-masuk').value)||null,
+    tanggal_lulus:tl||null,
     status_kerja:document.getElementById('edit-status').value,
     posisi:document.getElementById('edit-posisi').value.trim(),
     pekerjaan:job,
@@ -822,10 +928,14 @@ async function doSearch(){
   clearTimeout(searchDebounce);
   searchDebounce=setTimeout(async function(){
     var query=(document.getElementById('search-input').value||'').trim();
+    var fakultas=document.getElementById('search-fakultas').value;
     var prodi=document.getElementById('search-prodi').value;
     var status=document.getElementById('search-status').value;
     var req=supabase.from('alumni').select('*').order('name');
-    if(query)req=req.ilike('name','%'+query+'%');
+    if(query){
+      req=req.or('name.ilike.%'+query+'%,nim.ilike.%'+query+'%');
+    }
+    if(fakultas)req=req.eq('fakultas',fakultas);
     if(prodi)req=req.eq('prodi',prodi);
     if(status)req=req.eq('status_kerja',status);
     var res=await req;
@@ -854,11 +964,11 @@ async function renderCareer(){
   var currArr=ms.filter(function(m){return m.type==='current';});
   var current=currArr.length?currArr[currArr.length-1]:ms[ms.length-1];
   summaryEl.innerHTML=
-    '<div class="career-summary-item"><div class="cs-icon">🎓</div><div><strong>Tahun Lulus</strong><span>'+first.year+'</span></div></div>'+
+    '<div class="career-summary-item"><div class="cs-icon">🎓</div><div><strong>Tahun Masuk</strong><span>'+first.year+'</span></div></div>'+
     '<div class="career-summary-item"><div class="cs-icon">🚀</div><div><strong>Karier Pertama</strong><span>'+first.pos+' — '+first.company+'</span></div></div>'+
     '<div class="career-summary-item"><div class="cs-icon">💼</div><div><strong>Posisi Terkini</strong><span>'+current.pos+' — '+current.company+'</span></div></div>'+
     '<div class="career-summary-item"><div class="cs-icon">📊</div><div><strong>Total Milestone</strong><span>'+ms.length+' pencapaian</span></div></div>';
-  var typeBadge={start:'🎓 Awal Karier',milestone:'⭐ Pencapaian',current:'🟢 Saat Ini'};
+  var typeBadge={start:'🎓 Awal',milestone:'⭐ Pencapaian',current:'🟢 Saat Ini'};
   ms.forEach(function(m){
     var item=document.createElement('div');item.className='timeline-item'+(m.type==='current'?' current':'');
     item.innerHTML='<div class="ti-year">'+m.year+'</div><div class="ti-pos">'+m.pos+'</div><div class="ti-company">'+m.company+'</div>'+(m.description?'<div class="ti-desc">'+m.description+'</div>':'')+'<div class="ti-badge"><span class="badge">'+(typeBadge[m.type]||m.type)+'</span></div>';
@@ -914,14 +1024,20 @@ function buildAlumniCard(a){
     if(a.linkedin)links.push('in');if(a.instagram)links.push('ig');if(a.tiktok)links.push('tt');
     sosmedRow='<div style="margin-top:8px;font-size:.75rem;color:var(--text-light);">'+links.join(' · ')+'</div>';
   }
+  var lulusStr='';
+  if(a.tanggal_lulus){
+    lulusStr='<div style="font-size:.75rem;color:var(--text-light);margin-top:2px;">Lulus: '+formatTanggal(a.tanggal_lulus)+'</div>';
+  }
   var div=document.createElement('div');div.className='alumni-card';
   div.innerHTML=
     '<div class="alumni-card-avatar">'+a.name.charAt(0).toUpperCase()+'</div>'+
     '<h4>'+a.name+'</h4>'+
+    (a.nim?'<div class="alumni-nim">'+a.nim+'</div>':'')+
     '<p class="alumni-job">'+(a.posisi?a.posisi+' · ':'')+a.pekerjaan+'</p>'+
+    (a.fakultas?'<span class="badge fakultas">'+a.fakultas.replace('Fakultas ','Fak. ')+'</span>':'')+
     '<span class="badge">'+a.prodi+'</span>'+
-    '<span class="badge secondary">Lulus '+a.tahun+'</span>'+
-    statusBadge+sosmedRow;
+    '<span class="badge secondary">Masuk '+a.tahun_masuk+'</span>'+
+    statusBadge+lulusStr+sosmedRow;
   return div;
 }
 
@@ -936,6 +1052,11 @@ function closeModal(id){document.getElementById(id).classList.add('hidden');}
 function getSession(){try{return JSON.parse(localStorage.getItem('alumni_session')||'null');}catch{return null;}}
 function saveSession(user){localStorage.setItem('alumni_session',JSON.stringify({id:user.id,email:user.email}));}
 function clearSession(){localStorage.removeItem('alumni_session');}
+function formatTanggal(str){
+  if(!str)return null;
+  try{var d=new Date(str);return isNaN(d)?str:d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});}
+  catch(e){return str;}
+}
 var toastTimer;
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.add('hidden');},3200);}
 document.addEventListener('keydown',function(e){
