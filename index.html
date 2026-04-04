@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlumniConnect – Portal Alumni Kampus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════ LOADING SCREEN ══════════ -->
+<div id="page-loading" class="page active">
+  <div class="loading-screen">
+    <div class="loading-logo">Alumni<span>Connect</span></div>
+    <div class="loading-spinner"></div>
+    <p class="loading-text" id="loading-text">Menghubungkan ke database...</p>
+  </div>
+</div>
+
+<!-- ══════════ LANDING ══════════ -->
+<div id="page-landing" class="page">
+  <div class="landing-bg">
+    <div class="bg-blob b1"></div><div class="bg-blob b2"></div><div class="bg-blob b3"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <nav class="landing-nav">
+    <div class="logo">Alumni<span>Connect</span></div>
+    <div class="nav-actions">
+      <button class="btn-ghost" onclick="showPage('page-login')">Masuk</button>
+      <button class="btn-primary" onclick="showPage('page-register')">Daftar Sekarang</button>
+    </div>
+  </nav>
+  <div class="landing-hero">
+    <div class="hero-badge">🎓 Portal Resmi Alumni</div>
+    <h1 class="hero-title">Terhubung.<br/>Berkembang.<br/><em>Bersama.</em></h1>
+    <p class="hero-sub">Platform digital untuk alumni dalam satu ekosistem—jaringan karier, pencarian rekan, dan perjalanan profesional Anda.</p>
+    <div class="hero-cta">
+      <button class="btn-primary large" onclick="showPage('page-register')">Mulai Bergabung →</button>
+      <button class="btn-ghost large" onclick="showPage('page-login')">Sudah Punya Akun</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span id="stat-count">0</span><small>Alumni Terdaftar</small></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span>10+</span><small>Program Studi</small></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span>100%</span><small>Gratis</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ REGISTER ══════════ -->
+<div id="page-register" class="page">
+  <div class="auth-layout">
+    <div class="auth-left">
+      <div class="auth-brand" onclick="showPage('page-landing')"><span class="logo">Alumni<span>Connect</span></span></div>
+      <div class="auth-art">
+        <div class="art-circle c1"></div><div class="art-circle c2"></div><div class="art-circle c3"></div>
+        <div class="art-text">
+          <h2>Bergabunglah<br/>dengan jaringan<br/>alumni kami.</h2>
+          <p>Daftarkan diri dan mulai perjalanan profesional Anda.</p>
+        </div>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-card">
+        <h2>Buat Akun Baru</h2>
+        <p class="auth-sub">Isi data diri Anda untuk mendaftar</p>
+        <div id="register-error" class="alert-error hidden"></div>
+        <div id="register-success" class="alert-success hidden"></div>
+        <div class="form-group"><label>Nama Lengkap</label><input type="text" id="reg-name" placeholder="Contoh: Budi Santoso"/></div>
+        <div class="form-group"><label>Alamat Email</label><input type="email" id="reg-email" placeholder="email@contoh.com"/></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Program Studi</label>
+            <select id="reg-prodi">
+              <option value="">Pilih Prodi</option>
+              <option>Teknik Informatika</option><option>Sistem Informasi</option><option>Manajemen</option>
+              <option>Akuntansi</option><option>Hukum</option><option>Kedokteran</option>
+              <option>Psikologi</option><option>Ilmu Komunikasi</option><option>Teknik Elektro</option><option>Teknik Sipil</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Tahun Lulus</label><input type="number" id="reg-tahun" placeholder="2020" min="1990" max="2030"/></div>
+        </div>
+        <div class="form-group"><label>Pekerjaan Saat Ini</label><input type="text" id="reg-pekerjaan" placeholder="Contoh: Software Engineer di Gojek"/></div>
+        <div class="form-group"><label>Password</label><input type="password" id="reg-password" placeholder="Minimal 6 karakter"/></div>
+        <button class="btn-primary full" id="btn-register" onclick="doRegister()">Buat Akun</button>
+        <p class="auth-switch">Sudah punya akun? <a href="#" onclick="showPage('page-login')">Masuk di sini</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ LOGIN ══════════ -->
+<div id="page-login" class="page">
+  <div class="auth-layout">
+    <div class="auth-left">
+      <div class="auth-brand" onclick="showPage('page-landing')"><span class="logo">Alumni<span>Connect</span></span></div>
+      <div class="auth-art">
+        <div class="art-circle c1"></div><div class="art-circle c2"></div><div class="art-circle c3"></div>
+        <div class="auth-text">
+          <h2>Selamat<br/>datang<br/>kembali.</h2>
+          <p>Masuk dan lanjutkan perjalanan profesional Anda.</p>
+        </div>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-card">
+        <h2>Masuk ke Akun</h2>
+        <p class="auth-sub">Gunakan email dan password Anda</p>
+        <div id="login-error" class="alert-error hidden"></div>
+        <div class="form-group"><label>Alamat Email</label><input type="email" id="login-email" placeholder="email@contoh.com"/></div>
+        <div class="form-group"><label>Password</label><input type="password" id="login-password" placeholder="Password Anda"/></div>
+        <button class="btn-primary full" id="btn-login" onclick="doLogin()">Masuk</button>
+        <p class="auth-switch">Belum punya akun? <a href="#" onclick="showPage('page-register')">Daftar di sini</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ APP ══════════ -->
+<div id="page-app" class="page">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">Alumni<span>Connect</span></div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-tab="tab-dashboard" onclick="switchTab(this)">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard
+      </button>
+      <button class="nav-item" data-tab="tab-profil" onclick="switchTab(this)">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Profil Saya
+      </button>
+      <button class="nav-item" data-tab="tab-cari" onclick="switchTab(this)">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>Cari Alumni
+      </button>
+      <button class="nav-item" data-tab="tab-career" onclick="switchTab(this)">
+        <svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 4"/><path d="M3 21h18"/></svg>Career Milestone
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user" id="sidebar-user-info"></div>
+      <div class="db-status" id="db-status-sidebar"><span class="db-dot"></span> Supabase Connected</div>
+      <button class="btn-logout" onclick="doLogout()">Keluar</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger" onclick="toggleSidebar()"><span></span><span></span><span></span></button>
+        <div id="topbar-title" class="topbar-title">Dashboard</div>
+      </div>
+      <div class="topbar-right">
+        <div class="db-indicator"><span class="db-dot"></span><span>Supabase</span></div>
+        <div class="user-chip" id="topbar-user"></div>
+      </div>
+    </header>
+
+    <!-- DASHBOARD TAB -->
+    <div id="tab-dashboard" class="tab-content active">
+      <div class="section-header">
+        <h1 id="dash-greeting">Selamat datang!</h1>
+        <p>Ini adalah ringkasan portal alumni Anda</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card accent"><div class="stat-icon">👥</div><div class="stat-info"><span id="dash-total" class="stat-num">—</span><small>Total Alumni</small></div></div>
+        <div class="stat-card"><div class="stat-icon">🎓</div><div class="stat-info"><span id="dash-prodi" class="stat-num">—</span><small>Program Studi</small></div></div>
+        <div class="stat-card"><div class="stat-icon">💼</div><div class="stat-info"><span id="dash-job" class="stat-num small-text">—</span><small>Pekerjaan</small></div></div>
+        <div class="stat-card"><div class="stat-icon">📅</div><div class="stat-info"><span id="dash-tahun" class="stat-num">—</span><small>Tahun Lulus</small></div></div>
+      </div>
+      <div class="section-header mt-lg"><h2>Alumni Terbaru</h2></div>
+      <div class="alumni-grid" id="recent-alumni">
+        <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>
+      </div>
+    </div>
+
+    <!-- PROFIL TAB -->
+    <div id="tab-profil" class="tab-content">
+      <div class="section-header"><h1>Profil Saya</h1><p>Informasi akun dan data diri Anda</p></div>
+      <div class="profile-layout">
+        <div class="profile-card-main">
+          <div class="profile-avatar" id="profile-avatar-circle"></div>
+          <h2 id="profile-name-big"></h2>
+          <p id="profile-job-big" class="profile-tagline"></p>
+          <div class="profile-badges">
+            <span id="profile-badge-prodi" class="badge"></span>
+            <span id="profile-badge-tahun" class="badge secondary"></span>
+          </div>
+        </div>
+        <div class="profile-details-card">
+          <h3>Detail Informasi</h3>
+          <div class="detail-row"><label>Nama Lengkap</label><span id="pd-name"></span></div>
+          <div class="detail-row"><label>Email</label><span id="pd-email"></span></div>
+          <div class="detail-row"><label>Program Studi</label><span id="pd-prodi"></span></div>
+          <div class="detail-row"><label>Tahun Lulus</label><span id="pd-tahun"></span></div>
+          <div class="detail-row"><label>Pekerjaan</label><span id="pd-job"></span></div>
+          <button class="btn-primary mt-md" onclick="openEditModal()">Edit Profil</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARI ALUMNI TAB -->
+    <div id="tab-cari" class="tab-content">
+      <div class="section-header"><h1>Cari Alumni</h1><p>Temukan rekan alumni</p></div>
+      <div class="search-bar-wrap">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="search-input" placeholder="Cari berdasarkan nama..." oninput="doSearch()"/>
+        </div>
+        <select id="search-prodi" onchange="doSearch()">
+          <option value="">Semua Prodi</option>
+          <option>Teknik Informatika</option><option>Sistem Informasi</option><option>Manajemen</option>
+          <option>Akuntansi</option><option>Hukum</option><option>Kedokteran</option>
+          <option>Psikologi</option><option>Ilmu Komunikasi</option><option>Teknik Elektro</option><option>Teknik Sipil</option>
+        </select>
+      </div>
+      <div id="search-results" class="alumni-grid"></div>
+      <div id="search-empty" class="empty-state hidden"><div class="empty-icon">🔍</div><p>Tidak ada alumni yang ditemukan</p></div>
+    </div>
+
+    <!-- CAREER TAB -->
+    <div id="tab-career" class="tab-content">
+      <div class="section-header"><h1>Career Milestone</h1><p>Perjalanan karier profesional Anda</p></div>
+      <div class="career-layout">
+        <div class="career-summary-card">
+          <h3>Ringkasan Karier</h3>
+          <div id="career-summary-content"></div>
+          <button class="btn-primary mt-md" onclick="openCareerModal()">+ Tambah Milestone</button>
+        </div>
+        <div class="timeline-wrap">
+          <h3>Linimasa Perjalanan</h3>
+          <div class="timeline" id="career-timeline"></div>
+          <div id="career-empty" class="empty-state hidden"><div class="empty-icon">🚀</div><p>Belum ada milestone. Tambahkan sekarang!</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL EDIT PROFIL -->
+<div id="modal-edit" class="modal-overlay hidden" onclick="closeModal('modal-edit')">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <div class="modal-header"><h3>Edit Profil</h3><button class="modal-close" onclick="closeModal('modal-edit')">×</button></div>
+    <div class="form-group"><label>Nama Lengkap</label><input id="edit-name" type="text"/></div>
+    <div class="form-group"><label>Pekerjaan Saat Ini</label><input id="edit-job" type="text"/></div>
+    <div class="form-group"><label>Program Studi</label>
+      <select id="edit-prodi">
+        <option>Teknik Informatika</option><option>Sistem Informasi</option><option>Manajemen</option>
+        <option>Akuntansi</option><option>Hukum</option><option>Kedokteran</option>
+        <option>Psikologi</option><option>Ilmu Komunikasi</option><option>Teknik Elektro</option><option>Teknik Sipil</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Tahun Lulus</label><input id="edit-tahun" type="number"/></div>
+    <div class="modal-footer">
+      <button class="btn-ghost" onclick="closeModal('modal-edit')">Batal</button>
+      <button class="btn-primary" id="btn-save-edit" onclick="saveEdit()">Simpan</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CAREER -->
+<div id="modal-career" class="modal-overlay hidden" onclick="closeModal('modal-career')">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <div class="modal-header"><h3>Tambah Career Milestone</h3><button class="modal-close" onclick="closeModal('modal-career')">×</button></div>
+    <div class="form-group"><label>Tahun</label><input id="career-year" type="number" placeholder="2020"/></div>
+    <div class="form-group"><label>Posisi / Jabatan</label><input id="career-pos" type="text" placeholder="Software Engineer"/></div>
+    <div class="form-group"><label>Perusahaan / Instansi</label><input id="career-company" type="text" placeholder="PT. Contoh Indonesia"/></div>
+    <div class="form-group"><label>Jenis</label>
+      <select id="career-type">
+        <option value="start">Awal Karier</option>
+        <option value="milestone">Pencapaian</option>
+        <option value="current">Posisi Saat Ini</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Deskripsi (opsional)</label><textarea id="career-desc" rows="2" placeholder="Ceritakan peran Anda..."></textarea></div>
+    <div class="modal-footer">
+      <button class="btn-ghost" onclick="closeModal('modal-career')">Batal</button>
+      <button class="btn-primary" id="btn-save-career" onclick="saveCareer()">Simpan</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL KONFIGURASI SUPABASE -->
+<div id="modal-config" class="modal-overlay" style="display:none">
+  <div class="modal-card config-card" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3>⚙️ Konfigurasi Supabase</h3>
+    </div>
+    <p style="color:var(--text-mid);font-size:.875rem;margin-bottom:20px;line-height:1.7">
+      Masukkan URL dan Anon Key dari project Supabase Anda. Lihat panduan <code>SETUP.md</code> untuk langkah lengkap.
+    </p>
+    <div class="form-group">
+      <label>Supabase Project URL</label>
+      <input type="text" id="cfg-url" placeholder="https://slkywdotsawetceowrzg.supabase.co"/>
+    </div>
+    <div class="form-group">
+      <label>Supabase Anon Key</label>
+      <input type="text" id="cfg-key" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsa3l3ZG90c2F3ZXRjZW93cnpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUyOTkwNzAsImV4cCI6MjA5MDg3NTA3MH0.uZeL8WuJzvXz0qKG4f2NP2JH_7pROcp90IxtTsyUxR0"/>
+    </div>
+    <div class="cfg-hint">
+      📍 Temukan di: <strong>Supabase Dashboard → Settings → API → Project URL & anon public</strong>
+    </div>
+    <div id="cfg-error" class="alert-error hidden"></div>
+    <div class="modal-footer">
+      <button class="btn-primary full" onclick="saveConfig()">Simpan & Hubungkan</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
