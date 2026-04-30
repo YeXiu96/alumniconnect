@@ -242,6 +242,36 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
 .modal-footer{display:flex;justify-content:flex-end;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid var(--cream-dark)}
 .toast{position:fixed;bottom:32px;right:32px;background:var(--navy);color:var(--white);padding:14px 22px;border-radius:var(--radius-sm);font-size:.9rem;font-weight:500;z-index:9999;border-left:4px solid var(--gold);box-shadow:var(--shadow-lg);animation:slideIn .3s ease}
 @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+/* ALUMNI DETAIL MODAL */
+.alumni-detail-modal .modal-card{max-width:620px;padding:0;overflow:hidden}
+.adm-header{background:var(--navy);padding:28px 28px 24px;position:relative}
+.adm-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:700;color:var(--navy);font-family:'Playfair Display',serif;border:3px solid rgba(201,168,76,.4);margin-bottom:12px}
+.adm-header h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--white);margin-bottom:4px}
+.adm-header .adm-sub{font-size:.85rem;color:rgba(255,255,255,.55);margin-bottom:10px}
+.adm-header .adm-badges{display:flex;flex-wrap:wrap;gap:6px}
+.adm-header .badge{font-size:.7rem}
+.adm-close-btn{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:1.2rem;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;transition:var(--transition)}
+.adm-close-btn:hover{background:rgba(255,255,255,.22)}
+.adm-body{padding:24px 28px;max-height:60vh;overflow-y:auto}
+.adm-section{margin-bottom:20px}
+.adm-section-title{font-size:.72rem;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--cream-dark);display:flex;align-items:center;gap:6px}
+.adm-row{display:flex;align-items:baseline;gap:12px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.04)}
+.adm-row:last-child{border-bottom:none}
+.adm-label{font-size:.75rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;min-width:130px;flex-shrink:0}
+.adm-val{font-size:.9rem;color:var(--text-dark);font-weight:500;word-break:break-word}
+.adm-val.empty{color:var(--text-light);font-style:italic;font-size:.85rem}
+.adm-val a{color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:5px;font-weight:600;font-size:.88rem;padding:3px 10px;border-radius:50px;background:var(--gold-dim);border:1px solid rgba(201,168,76,.25);transition:var(--transition)}
+.adm-val a:hover{background:rgba(201,168,76,.25);text-decoration:none}
+.adm-sosmed-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.adm-sosmed-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;font-size:.82rem;font-weight:600;text-decoration:none;transition:var(--transition);border:1px solid}
+.adm-sosmed-chip:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.adm-sosmed-chip.linkedin{background:rgba(0,119,181,.08);color:#0077b5;border-color:rgba(0,119,181,.25)}
+.adm-sosmed-chip.instagram{background:rgba(193,53,132,.08);color:#c13584;border-color:rgba(193,53,132,.25)}
+.adm-sosmed-chip.facebook{background:rgba(24,119,242,.08);color:#1877f2;border-color:rgba(24,119,242,.25)}
+.adm-sosmed-chip.tiktok{background:rgba(0,0,0,.05);color:#000;border-color:rgba(0,0,0,.15)}
+.adm-name-link{color:var(--navy);cursor:pointer;font-size:.95rem;font-weight:600;text-decoration:none;border-bottom:1.5px dashed rgba(201,168,76,.5);transition:var(--transition)}
+.adm-name-link:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.alumni-card:hover .adm-name-link{color:var(--gold);}
 /* KELENGKAPAN PROFIL */
 .profile-complete{background:var(--white);border-radius:var(--radius);padding:20px 24px;border:1.5px solid var(--cream-dark);margin-bottom:20px;display:flex;align-items:center;gap:16px}
 .complete-bar-wrap{flex:1}
@@ -640,6 +670,20 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;outline:none;
   </div>
 </div>
 
+<!-- MODAL DETAIL ALUMNI -->
+<div id="modal-alumni-detail" class="modal-overlay alumni-detail-modal hidden" onclick="closeAlumniDetail()">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <div class="adm-header">
+      <button class="adm-close-btn" onclick="closeAlumniDetail()">×</button>
+      <div class="adm-avatar" id="adm-avatar-circle"></div>
+      <h3 id="adm-name"></h3>
+      <div class="adm-sub" id="adm-sub"></div>
+      <div class="adm-badges" id="adm-badges"></div>
+    </div>
+    <div class="adm-body" id="adm-body"></div>
+  </div>
+</div>
+
 <div id="toast" class="toast hidden"></div>
 
 <script>
@@ -991,7 +1035,95 @@ async function saveCareer(){
   closeModal('modal-career');await renderCareer();showToast('✅ Milestone berhasil ditambahkan!');
 }
 
-// ── NAVIGASI ────────────────────────────────
+// ── ALUMNI DETAIL MODAL ──────────────────────────────────────────────────
+function openAlumniDetail(a){
+  var modal=document.getElementById('modal-alumni-detail');
+
+  // Header
+  document.getElementById('adm-avatar-circle').textContent=a.name.charAt(0).toUpperCase();
+  document.getElementById('adm-name').textContent=a.name;
+  document.getElementById('adm-sub').textContent=(a.posisi?a.posisi+' · ':'')+( a.pekerjaan||'');
+
+  // Badges
+  var badgesHTML='';
+  if(a.fakultas)badgesHTML+='<span class="badge fakultas">'+a.fakultas.replace('Fakultas ','Fak. ')+'</span>';
+  if(a.prodi)badgesHTML+='<span class="badge">'+a.prodi+'</span>';
+  if(a.tahun_masuk)badgesHTML+='<span class="badge secondary">Masuk '+a.tahun_masuk+'</span>';
+  if(a.status_kerja){var sc=a.status_kerja==='PNS'?'pns':a.status_kerja==='Swasta'?'swasta':'wirausaha';badgesHTML+='<span class="badge '+sc+'">'+a.status_kerja+'</span>';}
+  document.getElementById('adm-badges').innerHTML=badgesHTML;
+
+  // Helper: safe value
+  function val(v){return v&&String(v).trim()!==''?String(v).trim():null;}
+  function row(label,content){return'<div class="adm-row"><span class="adm-label">'+label+'</span><span class="adm-val">'+(content||'<span class="empty">Tidak tersedia</span>')+'</span></div>';}
+  function linkRow(label,url,displayText){
+    if(!val(url))return row(label,null);
+    return row(label,'<a href="'+url+'" target="_blank" rel="noopener noreferrer">🔗 '+displayText+'</a>');
+  }
+  function buildUrl(raw,platform){
+    if(!raw)return null;
+    var s=raw.trim();
+    if(/^https?:\/\//i.test(s))return s;
+    var clean=s.replace(/^@/,'');
+    if(platform==='linkedin')return'https://linkedin.com/in/'+clean;
+    if(platform==='instagram')return'https://instagram.com/'+clean;
+    if(platform==='facebook')return'https://facebook.com/'+clean;
+    if(platform==='tiktok')return'https://tiktok.com/@'+clean;
+    return'https://'+s;
+  }
+
+  // Social media chips
+  var smChips='';
+  var smDefs=[
+    {key:'linkedin',label:'LinkedIn',cls:'linkedin',icon:'in'},
+    {key:'instagram',label:'Instagram',cls:'instagram',icon:'ig'},
+    {key:'facebook',label:'Facebook',cls:'facebook',icon:'fb'},
+    {key:'tiktok',label:'TikTok',cls:'tiktok',icon:'tt'}
+  ];
+  smDefs.forEach(function(sm){
+    var url=buildUrl(a[sm.key],sm.key);
+    if(url)smChips+='<a class="adm-sosmed-chip '+sm.cls+'" href="'+url+'" target="_blank" rel="noopener noreferrer"><strong>'+sm.icon+'</strong> '+sm.label+'</a>';
+  });
+  var sosmedSection='<div class="adm-section"><div class="adm-section-title">📱 Media Sosial Pribadi</div>';
+  if(smChips){sosmedSection+='<div class="adm-sosmed-grid">'+smChips+'</div>';}
+  else{sosmedSection+=row('Sosial Media',null);}
+  sosmedSection+='</div>';
+
+  // Contact section
+  var contactSection='<div class="adm-section"><div class="adm-section-title">📬 Kontak</div>'+
+    row('Email',val(a.email)?'<a href="mailto:'+val(a.email)+'">'+val(a.email)+'</a>':null)+
+    row('No. HP / WhatsApp',val(a.no_hp)?'<a href="tel:'+val(a.no_hp)+'">'+val(a.no_hp)+'</a>':null)+
+  '</div>';
+
+  // Work section
+  var kantor_url=buildUrl(a.sosmed_kantor,null);
+  var workSection='<div class="adm-section"><div class="adm-section-title">💼 Informasi Pekerjaan</div>'+
+    row('Status',val(a.status_kerja))+
+    row('Posisi / Jabatan',val(a.posisi))+
+    row('Tempat Bekerja',val(a.pekerjaan))+
+    row('Alamat Kantor',val(a.alamat_kantor))+
+    row('Sosmed Kantor',kantor_url?'<a href="'+kantor_url+'" target="_blank" rel="noopener noreferrer">🔗 '+a.sosmed_kantor+'</a>':val(a.sosmed_kantor))+
+  '</div>';
+
+  // Academic section
+  var academicSection='<div class="adm-section"><div class="adm-section-title">🎓 Data Akademik</div>'+
+    row('Fakultas',val(a.fakultas))+
+    row('Program Studi',val(a.prodi))+
+    row('Tahun Masuk',val(a.tahun_masuk))+
+    row('Tanggal Lulus',val(a.tanggal_lulus)?formatTanggal(a.tanggal_lulus):null)+
+  '</div>';
+
+  document.getElementById('adm-body').innerHTML=sosmedSection+contactSection+workSection+academicSection;
+  modal.classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
+
+function closeAlumniDetail(){
+  document.getElementById('modal-alumni-detail').classList.add('hidden');
+  document.body.style.overflow='';
+}
+// ─────────────────────────────────────────────────────────────────────────
+
+
 function showPage(id){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.getElementById(id).classList.add('active');}
 
 function switchTab(el){
@@ -1010,15 +1142,45 @@ function switchTab(el){
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
 
 // ── HELPERS ─────────────────────────────────
+// Data store — avoids inline JSON/quote escaping issues in onclick attributes
+var _alumniStore={};
+var _alumniStoreIdx=0;
+
 function buildAlumniCard(a){
+  var key='alm_'+(++_alumniStoreIdx);
+  _alumniStore[key]=a;
+
   var statusBadge='';
   if(a.status_kerja){var sc=a.status_kerja==='PNS'?'pns':a.status_kerja==='Swasta'?'swasta':'wirausaha';statusBadge='<span class="badge '+sc+'">'+a.status_kerja+'</span>';}
-  var sosmedRow='';
-  if(a.linkedin||a.instagram||a.tiktok){var links=[];if(a.linkedin)links.push('in');if(a.instagram)links.push('ig');if(a.tiktok)links.push('tt');sosmedRow='<div style="margin-top:8px;font-size:.75rem;color:var(--text-light);">'+links.join(' · ')+'</div>';}
+
+  var smAvail=[];
+  if(a.linkedin)smAvail.push('<span style="background:rgba(0,119,181,.1);color:#0077b5;padding:2px 7px;border-radius:50px;font-size:.7rem;font-weight:700;border:1px solid rgba(0,119,181,.2)">in</span>');
+  if(a.instagram)smAvail.push('<span style="background:rgba(193,53,132,.1);color:#c13584;padding:2px 7px;border-radius:50px;font-size:.7rem;font-weight:700;border:1px solid rgba(193,53,132,.2)">ig</span>');
+  if(a.facebook)smAvail.push('<span style="background:rgba(24,119,242,.1);color:#1877f2;padding:2px 7px;border-radius:50px;font-size:.7rem;font-weight:700;border:1px solid rgba(24,119,242,.2)">fb</span>');
+  if(a.tiktok)smAvail.push('<span style="background:rgba(0,0,0,.06);color:#333;padding:2px 7px;border-radius:50px;font-size:.7rem;font-weight:700;border:1px solid rgba(0,0,0,.12)">tt</span>');
+  var sosmedRow=smAvail.length?'<div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:8px;">'+smAvail.join('')+'</div>':'';
+
   var lulusStr='';
   if(a.tanggal_lulus)lulusStr='<div style="font-size:.75rem;color:var(--text-light);margin-top:2px;">Lulus: '+formatTanggal(a.tanggal_lulus)+'</div>';
-  var div=document.createElement('div');div.className='alumni-card';
-  div.innerHTML='<div class="alumni-card-avatar">'+a.name.charAt(0).toUpperCase()+'</div><h4>'+a.name+'</h4>'+(a.nim?'<div class="alumni-nim">'+a.nim+'</div>':'')+'<p class="alumni-job">'+(a.posisi?a.posisi+' · ':'')+a.pekerjaan+'</p>'+(a.fakultas?'<span class="badge fakultas">'+a.fakultas.replace('Fakultas ','Fak. ')+'</span>':'')+'<span class="badge">'+a.prodi+'</span><span class="badge secondary">Masuk '+a.tahun_masuk+'</span>'+statusBadge+lulusStr+sosmedRow;
+
+  var div=document.createElement('div');
+  div.className='alumni-card';
+  div.style.cursor='pointer';
+  div.setAttribute('data-key',key);
+  div.innerHTML=
+    '<div style="display:flex;justify-content:space-between;align-items:flex-start;">'+
+      '<div class="alumni-card-avatar">'+a.name.charAt(0).toUpperCase()+'</div>'+
+      '<span style="font-size:.68rem;color:var(--text-light);background:var(--cream-dark);padding:3px 8px;border-radius:50px;margin-top:6px;white-space:nowrap;">Lihat Detail →</span>'+
+    '</div>'+
+    '<h4 class="adm-name-link" style="margin-top:8px;">'+a.name+'</h4>'+
+    (a.nim?'<div class="alumni-nim">'+a.nim+'</div>':'')+
+    '<p class="alumni-job">'+(a.posisi?a.posisi+' · ':'')+a.pekerjaan+'</p>'+
+    (a.fakultas?'<span class="badge fakultas">'+a.fakultas.replace('Fakultas ','Fak. ')+'</span>':'')+
+    '<span class="badge">'+a.prodi+'</span>'+
+    '<span class="badge secondary">Masuk '+a.tahun_masuk+'</span>'+
+    statusBadge+lulusStr+sosmedRow;
+
+  div.addEventListener('click',function(){openAlumniDetail(_alumniStore[key]);});
   return div;
 }
 
@@ -1033,7 +1195,7 @@ function clearSession(){localStorage.removeItem('alumni_session');}
 var toastTimer;
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.add('hidden');},3200);}
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){closeModal('modal-edit');closeModal('modal-career');}
+  if(e.key==='Escape'){closeModal('modal-edit');closeModal('modal-career');closeAlumniDetail();}
   if(e.key==='Enter'){
     if(document.getElementById('page-login').classList.contains('active'))doLogin();
     if(document.getElementById('page-register').classList.contains('active'))doRegister();
